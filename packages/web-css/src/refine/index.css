@@ -1,0 +1,21 @@
+/* Refine page chrome */
+.neo-skeuo .refine-pageHeader-title,
+.neo-skeuo .ant-page-header-heading-title {
+  font-family: var(--neo-font);
+  color: var(--neo-ink);
+}
+
+.neo-skeuo .refine-create-button .ant-btn,
+.neo-skeuo .refine-list-button .ant-btn-primary {
+  filter: url(#neo-sketch);
+}
+
+.neo-skeuo .refine-edit-button,
+.neo-skeuo .refine-show-button,
+.neo-skeuo .refine-delete-button {
+  border-radius: var(--neo-radius-sm) !important;
+}
+
+.neo-skeuo .refine-save-button {
+  border: var(--neo-border-thick) !important;
+}

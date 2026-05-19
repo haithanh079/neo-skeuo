@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <path
+    d="M5 6 L43 5.5 L44 41 L6.5 42.5 L5.5 8 Z"
+    fill="#f0ebe3"
+    stroke="#1a1a1a"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    vector-effect="non-scaling-stroke"
+  />
+  <path
+    d="M7 8 L41 7.5 L42 39 L8 40 Z"
+    fill="none"
+    stroke="#1a1a1a"
+    stroke-width="0.75"
+    opacity="0.25"
+    stroke-linejoin="round"
+  />
+</svg>

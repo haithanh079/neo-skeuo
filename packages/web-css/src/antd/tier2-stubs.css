@@ -1,0 +1,158 @@
+/* Tier 2 Ant components — shared neo-skeuo chrome */
+.neo-skeuo .ant-alert {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-md) !important;
+  background: var(--neo-surface) !important;
+}
+
+.neo-skeuo .ant-drawer-content {
+  border-left: var(--neo-border-thick) !important;
+  box-shadow: var(--neo-shadow-raised-lg) !important;
+}
+
+.neo-skeuo .ant-upload-drag {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-md) !important;
+  background: var(--neo-inset) !important;
+  box-shadow: var(--neo-shadow-inset) !important;
+}
+
+.neo-skeuo .ant-tabs-tab {
+  border: var(--neo-border-thin) !important;
+  border-radius: var(--neo-radius-md) var(--neo-radius-md) 0 0 !important;
+}
+
+.neo-skeuo .ant-tabs-tab-active {
+  border: var(--neo-border-medium) !important;
+  background: var(--neo-hatch), var(--neo-inset) !important;
+}
+
+.neo-skeuo .ant-steps-item-process .ant-steps-item-icon {
+  border: var(--neo-border-thick) !important;
+  box-shadow: var(--neo-shadow-raised) !important;
+}
+
+.neo-skeuo .ant-progress-inner {
+  border: var(--neo-border-thin) !important;
+  background: var(--neo-inset) !important;
+  box-shadow: var(--neo-shadow-inset) !important;
+}
+
+.neo-skeuo .ant-progress-bg {
+  background: var(--neo-hatch), var(--neo-ink) !important;
+}
+
+.neo-skeuo .ant-result {
+  border: var(--neo-border-medium);
+  border-radius: var(--neo-radius-lg);
+  padding: var(--neo-space-lg);
+}
+
+.neo-skeuo .ant-empty {
+  border: var(--neo-border-thin) dashed var(--neo-ink-muted);
+  border-radius: var(--neo-radius-lg);
+  padding: var(--neo-space-xl);
+}
+
+.neo-skeuo .ant-auto-complete .ant-select-selector,
+.neo-skeuo .ant-cascader-picker,
+.neo-skeuo .ant-tree-select .ant-select-selector {
+  background: var(--neo-inset) !important;
+  box-shadow: var(--neo-shadow-inset) !important;
+}
+
+.neo-skeuo .ant-transfer-list {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-md) !important;
+}
+
+.neo-skeuo .ant-timeline-item-head {
+  border: var(--neo-border-medium) !important;
+  background: var(--neo-surface) !important;
+}
+
+.neo-skeuo .ant-collapse-item {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-md) !important;
+  margin-bottom: var(--neo-space-sm);
+}
+
+.neo-skeuo .ant-list-item {
+  border-bottom: 1px solid color-mix(in srgb, var(--neo-ink) 15%, transparent) !important;
+}
+
+.neo-skeuo .ant-segmented {
+  border: var(--neo-border-medium) !important;
+  background: var(--neo-inset) !important;
+}
+
+.neo-skeuo .ant-float-btn {
+  border: var(--neo-border-thick) !important;
+  box-shadow: var(--neo-shadow-raised-lg) !important;
+}
+
+.neo-skeuo .ant-rate-star {
+  color: var(--neo-ink) !important;
+}
+
+.neo-skeuo .ant-picker-time-panel,
+.neo-skeuo .ant-picker-range {
+  font-family: var(--neo-font);
+}
+
+.neo-skeuo .ant-mentions textarea {
+  background: var(--neo-inset) !important;
+  border: var(--neo-border-thin) !important;
+  border-radius: var(--neo-radius-md) !important;
+}
+
+.neo-skeuo .ant-calendar,
+.neo-skeuo .ant-picker-calendar {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-lg) !important;
+  background: var(--neo-surface) !important;
+}
+
+.neo-skeuo .ant-carousel .slick-slide {
+  border: var(--neo-border-medium);
+  border-radius: var(--neo-radius-md);
+  background: var(--neo-inset);
+}
+
+.neo-skeuo .ant-image {
+  border: var(--neo-border-medium);
+  border-radius: var(--neo-radius-md);
+  overflow: hidden;
+}
+
+.neo-skeuo .ant-qrcode {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-md) !important;
+  padding: var(--neo-space-sm) !important;
+  background: var(--neo-surface) !important;
+}
+
+.neo-skeuo .ant-watermark {
+  font-family: var(--neo-font);
+}
+
+.neo-skeuo .ant-tour-inner {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-lg) !important;
+  box-shadow: var(--neo-shadow-raised-lg) !important;
+}
+
+.neo-skeuo .ant-anchor-link-title {
+  font-family: var(--neo-font);
+  color: var(--neo-ink-muted);
+}
+
+.neo-skeuo .ant-anchor-link-active > .ant-anchor-link-title {
+  color: var(--neo-ink);
+}
+
+.neo-skeuo .ant-back-top {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-pill) !important;
+  box-shadow: var(--neo-shadow-raised) !important;
+}

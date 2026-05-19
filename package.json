@@ -1,0 +1,19 @@
+{
+  "name": "neo-skeuo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build:packages",
+    "build:packages": "npm run build -w @neo-skeuo/tokens && npm run build -w @neo-skeuo/assets && npm run build -w @neo-skeuo/react && npm run build -w @neo-skeuo/antd && npm run build -w @neo-skeuo/refine && npm run build -w @neo-skeuo/vue && npm run build -w @neo-skeuo/ant-design-vue && npm run build -w @neo-skeuo/react-native",
+    "test:packages": "npm run test -w @neo-skeuo/tokens",
+    "storybook": "npm run dev -w storybook-web"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.11",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}

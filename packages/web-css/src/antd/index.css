@@ -1,0 +1,5 @@
+/* Tier 1: ported from Book Bingo admin */
+@import "./_legacy-bundle.css";
+
+/* Tier 2: CMS catalog stubs (extend per component) */
+@import "./tier2-stubs.css";

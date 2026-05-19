@@ -1,0 +1,27 @@
+{
+  "name": "@neo-skeuo/assets",
+  "version": "0.1.0-alpha.0",
+  "description": "Neo-skeuo SVG borders, textures, and RN asset paths",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./border-raised.svg": "./src/border-raised.svg",
+    "./border-inset.svg": "./src/border-inset.svg",
+    "./border-pressed.svg": "./src/border-pressed.svg",
+    "./paper-texture.svg": "./src/paper-texture.svg",
+    "./paper-texture-dark.svg": "./src/paper-texture-dark.svg"
+  },
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "tsup && node scripts/build-rn-assets.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}

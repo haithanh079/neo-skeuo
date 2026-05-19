@@ -1,0 +1,16 @@
+.neo-skeuo[data-neo-theme="dark"] {
+  --neo-paper: #1c1b19;
+  --neo-surface: #262522;
+  --neo-inset: #141312;
+  --neo-ink: #f2efe8;
+  --neo-ink-muted: #a8a4a0;
+  --neo-ink-faint: #6b6764;
+  --neo-white: #faf7f2;
+  --neo-shadow-raised: 3px 4px 0 rgba(0, 0, 0, 0.35), 6px 8px 16px rgba(0, 0, 0, 0.25);
+  --neo-shadow-raised-lg: 4px 5px 0 rgba(0, 0, 0, 0.4), 10px 14px 28px rgba(0, 0, 0, 0.3);
+  --neo-shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  --neo-shadow-drop: 3px 4px 0 rgba(0, 0, 0, 0.45);
+  --neo-hatch: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(242, 239, 232, 0.08) 3px, rgba(242, 239, 232, 0.08) 4px);
+  --neo-paper-texture: url("../../assets/src/paper-texture-dark.svg");
+  color-scheme: dark;
+}

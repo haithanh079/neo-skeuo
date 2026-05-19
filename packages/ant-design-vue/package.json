@@ -1,0 +1,20 @@
+{
+  "name": "@neo-skeuo/ant-design-vue",
+  "version": "0.1.0-alpha.0",
+  "description": "Neo-skeuo Ant Design Vue provider",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": { "build": "tsup" },
+  "peerDependencies": { "ant-design-vue": ">=4", "vue": ">=3.4" },
+  "dependencies": { "@neo-skeuo/tokens": "0.1.0-alpha.0", "@neo-skeuo/vue": "0.1.0-alpha.0" },
+  "devDependencies": { "tsup": "^8.3.5", "typescript": "^5.7.2", "vue": "^3.5.13" }
+}

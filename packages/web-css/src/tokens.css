@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+.neo-skeuo[data-neo-theme="light"],
+.neo-skeuo:not([data-neo-theme]) {
+  --neo-paper: #f4f0e8;
+  --neo-surface: #faf7f2;
+  --neo-inset: #f0ebe3;
+  --neo-ink: #1a1a1a;
+  --neo-ink-muted: #6b6b6b;
+  --neo-ink-faint: #a8a8a8;
+  --neo-white: #ffffff;
+  --neo-border-thin: 1px solid var(--neo-ink);
+  --neo-border-medium: 2px solid var(--neo-ink);
+  --neo-border-thick: 4px solid var(--neo-ink);
+  --neo-radius-sm: 4px;
+  --neo-radius-md: 8px;
+  --neo-radius-lg: 12px;
+  --neo-radius-pill: 20px;
+  --neo-shadow-raised: 3px 4px 0 rgba(26, 26, 26, 0.12), 6px 8px 16px rgba(26, 26, 26, 0.08);
+  --neo-shadow-raised-lg: 4px 5px 0 rgba(26, 26, 26, 0.14), 10px 14px 28px rgba(26, 26, 26, 0.1);
+  --neo-shadow-inset: inset 0 2px 4px rgba(26, 26, 26, 0.1), inset 0 1px 2px rgba(26, 26, 26, 0.06);
+  --neo-shadow-drop: 3px 4px 0 rgba(26, 26, 26, 0.22);
+  --neo-hatch: repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(26, 26, 26, 0.07) 3px, rgba(26, 26, 26, 0.07) 4px);
+  --neo-font: "Patrick Hand", "Segoe UI", system-ui, sans-serif;
+  --neo-font-size: 16px;
+  --neo-line-height: 1.45;
+  --neo-space-xs: 4px;
+  --neo-space-sm: 8px;
+  --neo-space-md: 16px;
+  --neo-space-lg: 24px;
+  --neo-space-xl: 32px;
+  --neo-border-raised: url("../../assets/src/border-raised.svg");
+  --neo-border-inset: url("../../assets/src/border-inset.svg");
+  --neo-border-pressed: url("../../assets/src/border-pressed.svg");
+  --neo-paper-texture: url("../../assets/src/paper-texture.svg");
+  color-scheme: light;
+}
+
+.neo-skeuo {
+  font-family: var(--neo-font);
+  font-size: var(--neo-font-size);
+  line-height: var(--neo-line-height);
+  color: var(--neo-ink);
+  background-color: var(--neo-paper);
+  background-image: var(--neo-paper-texture);
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
