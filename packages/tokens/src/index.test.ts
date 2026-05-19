@@ -5,6 +5,8 @@ describe("@neo-skeuo/tokens", () => {
   it("getTokens returns light and dark", () => {
     expect(getTokens("light").color.paper).toBe("#f4f0e8");
     expect(getTokens("dark").color.paper).toBe("#1c1b19");
+    expect(getTokens("light").color.success).toBe("#2d6a4f");
+    expect(getTokens("dark").color.error).toBe("#e76f51");
   });
 
   it("resolveThemeMode", () => {

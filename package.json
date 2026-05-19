@@ -8,7 +8,8 @@
   "scripts": {
     "build": "npm run build:packages",
     "build:packages": "npm run build -w @neo-skeuo/tokens && npm run build -w @neo-skeuo/assets && npm run build -w @neo-skeuo/react && npm run build -w @neo-skeuo/antd && npm run build -w @neo-skeuo/refine && npm run build -w @neo-skeuo/vue && npm run build -w @neo-skeuo/ant-design-vue && npm run build -w @neo-skeuo/react-native",
-    "test:packages": "npm run test -w @neo-skeuo/tokens",
+    "test:packages": "npm run test -w @neo-skeuo/tokens && npm run test -w @neo-skeuo/react",
+    "typecheck": "npm run typecheck -w @neo-skeuo/tokens && npm run typecheck -w @neo-skeuo/react && npm run typecheck -w @neo-skeuo/antd && npm run typecheck -w @neo-skeuo/refine && npm run typecheck -w @neo-skeuo/vue && npm run typecheck -w @neo-skeuo/react-native && npm run typecheck -w @neo-skeuo/assets",
     "storybook": "npm run dev -w storybook-web"
   },
   "devDependencies": {

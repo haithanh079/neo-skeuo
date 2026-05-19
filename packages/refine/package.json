@@ -29,6 +29,7 @@
     "@neo-skeuo/antd": "0.1.0-alpha.0"
   },
   "devDependencies": {
+    "@refinedev/core": "^4.57.0",
     "@types/react": "^18.3.18",
     "antd": "^5.29.3",
     "react": "^18.3.1",

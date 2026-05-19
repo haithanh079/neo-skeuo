@@ -6,6 +6,10 @@
   --neo-ink-muted: #a8a4a0;
   --neo-ink-faint: #6b6764;
   --neo-white: #faf7f2;
+  --neo-success: #52b788;
+  --neo-warning: #e9c46a;
+  --neo-error: #e76f51;
+  --neo-info: #90e0ef;
   --neo-shadow-raised: 3px 4px 0 rgba(0, 0, 0, 0.35), 6px 8px 16px rgba(0, 0, 0, 0.25);
   --neo-shadow-raised-lg: 4px 5px 0 rgba(0, 0, 0, 0.4), 10px 14px 28px rgba(0, 0, 0, 0.3);
   --neo-shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(0, 0, 0, 0.2);

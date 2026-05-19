@@ -105,3 +105,411 @@
   padding: 2px 10px;
   font-size: 14px;
 }
+
+.neo-skeuo .neo-btn--ghost {
+  background: transparent;
+  box-shadow: none;
+  border: var(--neo-border-thin);
+}
+
+.neo-skeuo .neo-btn--ghost:hover:not(:disabled) {
+  background: var(--neo-hatch), var(--neo-inset);
+}
+
+.neo-skeuo .neo-btn:focus-visible,
+.neo-skeuo .neo-input:focus-visible,
+.neo-skeuo .neo-checkbox:focus-visible,
+.neo-skeuo .neo-radio:focus-visible,
+.neo-skeuo .neo-switch:focus-visible {
+  outline: 2px solid var(--neo-ink);
+  outline-offset: 2px;
+}
+
+/* Form controls */
+.neo-skeuo .neo-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-xs);
+  margin-bottom: var(--neo-space-md);
+}
+
+.neo-skeuo .neo-field__label {
+  font-size: 14px;
+  color: var(--neo-ink);
+}
+
+.neo-skeuo .neo-field__hint {
+  font-size: 13px;
+  color: var(--neo-ink-muted);
+}
+
+.neo-skeuo .neo-field__error {
+  font-size: 13px;
+  color: var(--neo-error);
+}
+
+.neo-skeuo .neo-field--error .neo-input {
+  border-color: var(--neo-error);
+}
+
+.neo-skeuo .neo-checkbox,
+.neo-skeuo .neo-radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background: var(--neo-inset);
+  border: var(--neo-border-medium);
+  border-radius: var(--neo-radius-sm);
+  box-shadow: var(--neo-shadow-inset);
+  flex-shrink: 0;
+}
+
+.neo-skeuo .neo-radio {
+  border-radius: 50%;
+}
+
+.neo-skeuo .neo-checkbox:checked,
+.neo-skeuo .neo-radio:checked {
+  background: var(--neo-hatch), var(--neo-ink);
+  box-shadow: var(--neo-shadow-inset);
+}
+
+.neo-skeuo .neo-checkbox:checked::after {
+  content: "✓";
+  display: block;
+  text-align: center;
+  line-height: 18px;
+  font-size: 12px;
+  color: var(--neo-surface);
+}
+
+.neo-skeuo .neo-radio:checked::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 4px auto;
+  border-radius: 50%;
+  background: var(--neo-surface);
+}
+
+.neo-skeuo .neo-switch {
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  min-height: 24px;
+  padding: 0;
+  border: var(--neo-border-medium);
+  border-radius: var(--neo-radius-pill);
+  background: var(--neo-inset);
+  box-shadow: var(--neo-shadow-inset);
+  cursor: pointer;
+  position: relative;
+}
+
+.neo-skeuo .neo-switch::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--neo-surface);
+  border: var(--neo-border-thin);
+  transition: transform var(--neo-duration-fast) var(--neo-ease-out);
+}
+
+.neo-skeuo .neo-switch:checked {
+  background: var(--neo-ink);
+}
+
+.neo-skeuo .neo-switch:checked::before {
+  transform: translateX(20px);
+}
+
+.neo-skeuo .neo-slider {
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  min-height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: var(--neo-radius-pill);
+  background: var(--neo-inset);
+  box-shadow: var(--neo-shadow-inset);
+}
+
+.neo-skeuo .neo-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: var(--neo-border-medium);
+  border-radius: 50%;
+  background: var(--neo-surface);
+  box-shadow: var(--neo-shadow-raised);
+  cursor: pointer;
+}
+
+/* Feedback */
+.neo-skeuo .neo-alert {
+  padding: var(--neo-space-sm) var(--neo-space-md);
+  border-left: 4px solid var(--neo-info);
+}
+
+.neo-skeuo .neo-alert--success {
+  border-left-color: var(--neo-success);
+}
+
+.neo-skeuo .neo-alert--warning {
+  border-left-color: var(--neo-warning);
+}
+
+.neo-skeuo .neo-alert--error {
+  border-left-color: var(--neo-error);
+}
+
+.neo-skeuo .neo-alert--info {
+  border-left-color: var(--neo-info);
+}
+
+.neo-skeuo .neo-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
+  padding: var(--neo-space-sm) var(--neo-space-md);
+  display: flex;
+  gap: var(--neo-space-sm);
+  align-items: center;
+  min-width: 200px;
+  max-width: min(420px, 90vw);
+}
+
+.neo-skeuo .neo-toast-region {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--neo-space-sm);
+  pointer-events: none;
+}
+
+.neo-skeuo .neo-toast-region .neo-toast {
+  position: static;
+  pointer-events: auto;
+}
+
+.neo-skeuo .neo-spinner {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.neo-skeuo .neo-skeleton {
+  height: 12px;
+  margin-bottom: var(--neo-space-sm);
+  border-radius: var(--neo-radius-sm);
+}
+
+.neo-skeuo .neo-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  padding: var(--neo-space-md);
+}
+
+.neo-skeuo .neo-modal {
+  min-width: 320px;
+  max-width: min(560px, 90vw);
+  padding: var(--neo-space-lg);
+  filter: url(#neo-sketch-strong);
+}
+
+.neo-skeuo .neo-modal__title {
+  margin: 0 0 var(--neo-space-md);
+  font-size: 1.25rem;
+}
+
+/* Navigation */
+.neo-skeuo .neo-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--neo-space-md);
+}
+
+.neo-skeuo .neo-tabs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--neo-space-xs);
+}
+
+.neo-skeuo .neo-tabs__tab[aria-selected="true"] {
+  /* primary styling via neo-btn--primary on button */
+}
+
+.neo-skeuo .neo-tabs__panel {
+  padding: var(--neo-space-md);
+}
+
+.neo-skeuo .neo-tabs__panel[hidden] {
+  display: none;
+}
+
+.neo-skeuo .neo-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--neo-space-xs);
+  align-items: center;
+  font-size: 14px;
+}
+
+.neo-skeuo .neo-breadcrumb a {
+  color: var(--neo-ink);
+  text-decoration: underline;
+}
+
+.neo-skeuo .neo-breadcrumb__sep {
+  color: var(--neo-ink-muted);
+}
+
+.neo-skeuo .neo-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--neo-space-xs);
+}
+
+.neo-skeuo .neo-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--neo-space-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.neo-skeuo .neo-steps__item {
+  display: flex;
+  align-items: center;
+  gap: var(--neo-space-xs);
+}
+
+.neo-skeuo .neo-steps__item--inactive {
+  opacity: 0.5;
+}
+
+.neo-skeuo .neo-tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.neo-skeuo .neo-tooltip__bubble {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+  background: var(--neo-ink);
+  color: var(--neo-surface);
+  border-radius: var(--neo-radius-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--neo-duration-fast) var(--neo-ease-out);
+  z-index: 50;
+}
+
+.neo-skeuo .neo-tooltip:hover .neo-tooltip__bubble,
+.neo-skeuo .neo-tooltip:focus-within .neo-tooltip__bubble {
+  opacity: 1;
+}
+
+/* Data display */
+.neo-skeuo .neo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.neo-skeuo .neo-table th {
+  border-bottom: var(--neo-border-medium);
+  padding: var(--neo-space-sm);
+  text-align: left;
+}
+
+.neo-skeuo .neo-table td {
+  border-bottom: 1px solid color-mix(in srgb, var(--neo-ink) 15%, transparent);
+  padding: var(--neo-space-sm);
+}
+
+.neo-skeuo .neo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.neo-skeuo .neo-list__item {
+  border-bottom: 1px solid color-mix(in srgb, var(--neo-ink) 15%, transparent);
+  padding: var(--neo-space-sm) 0;
+}
+
+.neo-skeuo .neo-avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: var(--neo-border-medium);
+  background: var(--neo-surface);
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.neo-skeuo .neo-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.neo-skeuo .neo-divider {
+  border: none;
+  border-top: 1px solid var(--neo-ink-muted);
+  margin: var(--neo-space-md) 0;
+}
+
+.neo-skeuo .neo-empty {
+  text-align: center;
+  padding: var(--neo-space-xl);
+}
+
+/* Layout */
+.neo-skeuo .neo-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.neo-skeuo .neo-stack--row {
+  flex-direction: row;
+}
+
+.neo-skeuo .neo-grid {
+  display: grid;
+  gap: var(--neo-space-md);
+}
+
+.neo-skeuo .neo-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--neo-space-md);
+}

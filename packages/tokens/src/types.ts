@@ -12,6 +12,10 @@ export type NeoColorTokens = {
   inkMuted: string;
   inkFaint: string;
   white: string;
+  success: string;
+  warning: string;
+  error: string;
+  info: string;
 };
 
 export type NeoTokenSet = {

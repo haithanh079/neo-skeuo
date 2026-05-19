@@ -92,12 +92,85 @@ export function NeoEmpty({ description }: { description?: string }) {
     </NeoSurface>
   );
 }
-export function NeoTabs() { return null; }
-export function NeoBreadcrumb() { return null; }
-export function NeoPagination() { return null; }
-export function NeoSteps() { return null; }
-export function NeoTooltip({ children }: { label?: string; children?: ReactNode }) { return <>{children}</>; }
-export function NeoTable() { return null; }
+export function NeoTabs({
+  tabs,
+  active,
+  onChange,
+}: {
+  tabs: string[];
+  active: string;
+  onChange: (t: string) => void;
+}) {
+  return (
+    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+      {tabs.map((t) => (
+        <NeoButton key={t} variant={active === t ? "primary" : "default"} onPress={() => onChange(t)}>
+          <Text>{t}</Text>
+        </NeoButton>
+      ))}
+    </View>
+  );
+}
+
+export function NeoBreadcrumb({ items }: { items: Array<{ label: string }> }) {
+  return (
+    <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+      <Text>{items.map((item, i) => `${i > 0 ? " > " : ""}${item.label}`).join("")}</Text>
+    </View>
+  );
+}
+
+export function NeoPagination({ page, total, onChange }: { page: number; total: number; onChange: (p: number) => void }) {
+  return (
+    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 4 }}>
+      {Array.from({ length: total }, (_, i) => i + 1).map((p) => (
+        <NeoButton key={p} variant={p === page ? "primary" : "default"} onPress={() => onChange(p)}>
+          <Text>{p}</Text>
+        </NeoButton>
+      ))}
+    </View>
+  );
+}
+
+export function NeoSteps({ steps, current }: { steps: string[]; current: number }) {
+  return (
+    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+      {steps.map((s, i) => (
+        <View key={s} style={{ flexDirection: "row", alignItems: "center", gap: 4, opacity: i <= current ? 1 : 0.5 }}>
+          <NeoBadge>{i + 1}</NeoBadge>
+          <Text>{s}</Text>
+        </View>
+      ))}
+    </View>
+  );
+}
+
+export function NeoTooltip({ children }: { label?: string; children?: ReactNode }) {
+  return <>{children}</>;
+}
+
+export function NeoTable({ columns, rows }: { columns: string[]; rows: string[][] }) {
+  return (
+    <View>
+      <View style={{ flexDirection: "row", borderBottomWidth: 2, borderColor: "#333" }}>
+        {columns.map((c) => (
+          <Text key={c} style={{ flex: 1, padding: 8, fontWeight: "600" }}>
+            {c}
+          </Text>
+        ))}
+      </View>
+      {rows.map((row, ri) => (
+        <View key={ri} style={{ flexDirection: "row", borderBottomWidth: 1, borderColor: "#ccc" }}>
+          {row.map((cell, ci) => (
+            <Text key={ci} style={{ flex: 1, padding: 8 }}>
+              {cell}
+            </Text>
+          ))}
+        </View>
+      ))}
+    </View>
+  );
+}
 export function NeoList({ items }: { items: string[] }) {
   return (
     <View>

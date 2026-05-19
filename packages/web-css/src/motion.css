@@ -1,0 +1,68 @@
+/* Motion utilities — respects prefers-reduced-motion */
+
+@keyframes neo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes neo-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes neo-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.neo-skeuo .neo-animate-in {
+  animation: neo-fade-in var(--neo-duration-normal) var(--neo-ease-out);
+}
+
+.neo-skeuo .neo-spinner {
+  animation: neo-spin var(--neo-duration-slow) linear infinite;
+}
+
+.neo-skeuo .neo-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--neo-inset) 0%,
+    color-mix(in srgb, var(--neo-ink) 8%, var(--neo-inset)) 50%,
+    var(--neo-inset) 100%
+  );
+  background-size: 200% 100%;
+  animation: neo-shimmer 1.4s ease-in-out infinite;
+}
+
+.neo-skeuo .neo-modal-backdrop {
+  animation: neo-fade-in var(--neo-duration-fast) var(--neo-ease-out);
+}
+
+.neo-skeuo .neo-toast {
+  animation: neo-fade-in var(--neo-duration-normal) var(--neo-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neo-skeuo .neo-animate-in,
+  .neo-skeuo .neo-spinner,
+  .neo-skeuo .neo-skeleton,
+  .neo-skeuo .neo-modal-backdrop,
+  .neo-skeuo .neo-toast {
+    animation: none;
+  }
+
+  .neo-skeuo .neo-btn:active:not(:disabled) {
+    transform: none;
+  }
+}

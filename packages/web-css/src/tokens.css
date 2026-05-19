@@ -9,6 +9,14 @@
   --neo-ink-muted: #6b6b6b;
   --neo-ink-faint: #a8a8a8;
   --neo-white: #ffffff;
+  --neo-success: #2d6a4f;
+  --neo-warning: #b08900;
+  --neo-error: #9b2226;
+  --neo-info: #1d4e89;
+  --neo-duration-fast: 120ms;
+  --neo-duration-normal: 220ms;
+  --neo-duration-slow: 360ms;
+  --neo-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --neo-border-thin: 1px solid var(--neo-ink);
   --neo-border-medium: 2px solid var(--neo-ink);
   --neo-border-thick: 4px solid var(--neo-ink);

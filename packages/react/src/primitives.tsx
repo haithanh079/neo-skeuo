@@ -1,6 +1,9 @@
 import {
   createElement,
   forwardRef,
+  useCallback,
+  useId,
+  useRef,
   type ButtonHTMLAttributes,
   type HTMLAttributes,
   type InputHTMLAttributes,
@@ -8,6 +11,7 @@ import {
   type TextareaHTMLAttributes,
 } from "react";
 import { getSurfaceStyle, type NeoButtonVariant, type NeoElevation } from "@neo-skeuo/tokens";
+import { useEscapeKey, useFocusTrap } from "./a11y.js";
 import { useNeoTheme } from "./context.js";
 
 function cn(...parts: Array<string | false | undefined>) {
@@ -83,22 +87,31 @@ export const NeoSelect = forwardRef<HTMLSelectElement, NeoSelectProps>(function 
 });
 
 export const NeoCheckbox = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(function NeoCheckbox(
-  props,
+  { className, ...props },
   ref,
 ) {
-  return <input ref={ref} type="checkbox" {...props} />;
+  return <input ref={ref} type="checkbox" className={cn("neo-checkbox", className)} {...props} />;
 });
 
-export const NeoRadio = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(function NeoRadio(props, ref) {
-  return <input ref={ref} type="radio" {...props} />;
+export const NeoRadio = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(function NeoRadio(
+  { className, ...props },
+  ref,
+) {
+  return <input ref={ref} type="radio" className={cn("neo-radio", className)} {...props} />;
 });
 
-export const NeoSwitch = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(function NeoSwitch(props, ref) {
-  return <input ref={ref} type="checkbox" role="switch" {...props} />;
+export const NeoSwitch = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(function NeoSwitch(
+  { className, ...props },
+  ref,
+) {
+  return <input ref={ref} type="checkbox" role="switch" className={cn("neo-switch", className)} {...props} />;
 });
 
-export const NeoSlider = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(function NeoSlider(props, ref) {
-  return <input ref={ref} type="range" className="neo-input" {...props} />;
+export const NeoSlider = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement>>(function NeoSlider(
+  { className, ...props },
+  ref,
+) {
+  return <input ref={ref} type="range" className={cn("neo-slider", className)} {...props} />;
 });
 
 export type NeoCardProps = HTMLAttributes<HTMLDivElement>;
@@ -112,13 +125,46 @@ export const NeoBadge = forwardRef<HTMLSpanElement, HTMLAttributes<HTMLSpanEleme
 
 export const NeoTag = NeoBadge;
 
-export type NeoModalProps = { open?: boolean; title?: ReactNode; children?: ReactNode; onClose?: () => void };
-export function NeoModal({ open, title, children, onClose }: NeoModalProps) {
+export type NeoModalProps = {
+  open?: boolean;
+  title?: ReactNode;
+  children?: ReactNode;
+  onClose?: () => void;
+  labelledById?: string;
+};
+
+export function NeoModal({ open, title, children, onClose, labelledById }: NeoModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const titleId = useId();
+  const resolvedTitleId = labelledById ?? titleId;
+
+  useFocusTrap(dialogRef, open);
+  useEscapeKey(() => onClose?.(), open && !!onClose);
+
+  const onBackdrop = useCallback(
+    (e: React.MouseEvent) => {
+      if (e.target === e.currentTarget) onClose?.();
+    },
+    [onClose],
+  );
+
   if (!open) return null;
+
   return (
-    <div role="dialog" aria-modal style={{ position: "fixed", inset: 0, zIndex: 1000, display: "grid", placeItems: "center", background: "rgba(0,0,0,0.35)" }}>
-      <NeoSurface elevation="raised" style={{ minWidth: 320, maxWidth: "90vw", padding: 24, filter: "url(#neo-sketch-strong)" }}>
-        {title ? <h2 style={{ marginBottom: 16 }}>{title}</h2> : null}
+    <div className="neo-modal-backdrop neo-animate-in" onClick={onBackdrop} onKeyDown={undefined}>
+      <NeoSurface
+        ref={dialogRef}
+        elevation="raised"
+        className="neo-modal"
+        role="dialog"
+        aria-modal
+        aria-labelledby={title ? resolvedTitleId : undefined}
+      >
+        {title ? (
+          <h2 id={resolvedTitleId} className="neo-modal__title">
+            {title}
+          </h2>
+        ) : null}
         {children}
         {onClose ? (
           <div style={{ marginTop: 16, textAlign: "right" }}>
@@ -137,9 +183,13 @@ export const NeoAlert = forwardRef<HTMLDivElement, NeoAlertProps>(function NeoAl
 
 export function NeoToast({ message, onClose }: { message: string; onClose?: () => void }) {
   return (
-    <NeoSurface elevation="raised" className="neo-toast" style={{ position: "fixed", bottom: 24, right: 24, padding: 12, display: "flex", gap: 8, alignItems: "center" }}>
+    <NeoSurface elevation="raised" className="neo-toast neo-animate-in" role="status">
       <span>{message}</span>
-      {onClose ? <NeoButton variant="ghost" onClick={onClose}>×</NeoButton> : null}
+      {onClose ? (
+        <NeoButton variant="ghost" aria-label="Dismiss" onClick={onClose}>
+          ×
+        </NeoButton>
+      ) : null}
     </NeoSurface>
   );
 }
@@ -152,29 +202,79 @@ export const NeoProgress = forwardRef<HTMLProgressElement, HTMLAttributes<HTMLPr
 });
 
 export function NeoSpinner({ className }: { className?: string }) {
-  return <span className={cn("neo-spinner", className)} aria-busy>◌</span>;
+  return (
+    <span className={cn("neo-spinner", className)} aria-busy aria-label="Loading">
+      ◌
+    </span>
+  );
 }
 
-export const NeoSkeleton = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(function NeoSkeleton({ className, ...rest }, ref) {
-  return <div ref={ref} className={cn("neo-skeleton", className)} style={{ height: 12, marginBottom: 8, background: "var(--neo-inset)" }} {...rest} />;
+export const NeoSkeleton = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(function NeoSkeleton(
+  { className, ...rest },
+  ref,
+) {
+  return <div ref={ref} className={cn("neo-skeleton", className)} {...rest} />;
 });
 
 export function NeoEmpty({ description, action }: { description?: ReactNode; action?: ReactNode }) {
   return (
-    <NeoSurface elevation="flat" style={{ textAlign: "center", padding: 32 }}>
+    <NeoSurface elevation="flat" className="neo-empty">
       <p>{description ?? "No data"}</p>
       {action}
     </NeoSurface>
   );
 }
 
-export function NeoTabs({ tabs, active, onChange }: { tabs: string[]; active: string; onChange: (t: string) => void }) {
+export type NeoTabItem = { key: string; label: string; panel?: ReactNode };
+
+export function NeoTabs({
+  tabs,
+  active,
+  onChange,
+  items,
+}: {
+  tabs?: string[];
+  active: string;
+  onChange: (t: string) => void;
+  items?: NeoTabItem[];
+}) {
+  const tabItems: NeoTabItem[] =
+    items ??
+    (tabs ?? []).map((t) => ({
+      key: t,
+      label: t,
+    }));
+  const activeItem = tabItems.find((t) => t.key === active) ?? tabItems[0];
+
   return (
-    <div className="neo-tabs" role="tablist">
-      {tabs.map((t) => (
-        <NeoButton key={t} variant={active === t ? "primary" : "default"} onClick={() => onChange(t)} style={{ marginRight: 4 }}>
-          {t}
-        </NeoButton>
+    <div className="neo-tabs">
+      <div className="neo-tabs__list" role="tablist">
+        {tabItems.map((t) => (
+          <NeoButton
+            key={t.key}
+            role="tab"
+            id={`tab-${t.key}`}
+            aria-selected={active === t.key}
+            aria-controls={`panel-${t.key}`}
+            className="neo-tabs__tab"
+            variant={active === t.key ? "primary" : "default"}
+            onClick={() => onChange(t.key)}
+          >
+            {t.label}
+          </NeoButton>
+        ))}
+      </div>
+      {tabItems.map((t) => (
+        <div
+          key={t.key}
+          id={`panel-${t.key}`}
+          role="tabpanel"
+          aria-labelledby={`tab-${t.key}`}
+          className="neo-tabs__panel neo-inset"
+          hidden={active !== t.key}
+        >
+          {active === t.key ? (t.panel ?? activeItem?.panel ?? null) : null}
+        </div>
       ))}
     </div>
   );
@@ -182,10 +282,10 @@ export function NeoTabs({ tabs, active, onChange }: { tabs: string[]; active: st
 
 export function NeoBreadcrumb({ items }: { items: Array<{ label: string; href?: string }> }) {
   return (
-    <nav aria-label="Breadcrumb">
+    <nav className="neo-breadcrumb" aria-label="Breadcrumb">
       {items.map((item, i) => (
         <span key={i}>
-          {i > 0 ? " > " : ""}
+          {i > 0 ? <span className="neo-breadcrumb__sep"> &gt; </span> : null}
           {item.href ? <a href={item.href}>{item.label}</a> : item.label}
         </span>
       ))}
@@ -195,9 +295,9 @@ export function NeoBreadcrumb({ items }: { items: Array<{ label: string; href?: 
 
 export function NeoPagination({ page, total, onChange }: { page: number; total: number; onChange: (p: number) => void }) {
   return (
-    <div style={{ display: "flex", gap: 4 }}>
+    <div className="neo-pagination" role="navigation" aria-label="Pagination">
       {Array.from({ length: total }, (_, i) => i + 1).map((p) => (
-        <NeoButton key={p} variant={p === page ? "primary" : "default"} onClick={() => onChange(p)}>
+        <NeoButton key={p} variant={p === page ? "primary" : "default"} onClick={() => onChange(p)} aria-current={p === page ? "page" : undefined}>
           {p}
         </NeoButton>
       ))}
@@ -207,9 +307,9 @@ export function NeoPagination({ page, total, onChange }: { page: number; total: 
 
 export function NeoSteps({ steps, current }: { steps: string[]; current: number }) {
   return (
-    <ol style={{ display: "flex", gap: 8, listStyle: "none", padding: 0 }}>
+    <ol className="neo-steps">
       {steps.map((s, i) => (
-        <li key={s} style={{ opacity: i <= current ? 1 : 0.5 }}>
+        <li key={s} className={cn("neo-steps__item", i > current && "neo-steps__item--inactive")}>
           <NeoBadge>{i + 1}</NeoBadge> {s}
         </li>
       ))}
@@ -219,21 +319,22 @@ export function NeoSteps({ steps, current }: { steps: string[]; current: number 
 
 export function NeoTooltip({ label, children }: { label: string; children: ReactNode }) {
   return (
-    <span title={label} className="neo-tooltip">
+    <span className="neo-tooltip">
       {children}
+      <span className="neo-tooltip__bubble" role="tooltip">
+        {label}
+      </span>
     </span>
   );
 }
 
 export function NeoTable({ columns, rows }: { columns: string[]; rows: string[][] }) {
   return (
-    <table className="neo-table" style={{ width: "100%", borderCollapse: "collapse" }}>
+    <table className="neo-table">
       <thead>
         <tr>
           {columns.map((c) => (
-            <th key={c} style={{ borderBottom: "2px solid var(--neo-ink)", padding: 8 }}>
-              {c}
-            </th>
+            <th key={c}>{c}</th>
           ))}
         </tr>
       </thead>
@@ -241,9 +342,7 @@ export function NeoTable({ columns, rows }: { columns: string[]; rows: string[][
         {rows.map((row, ri) => (
           <tr key={ri}>
             {row.map((cell, ci) => (
-              <td key={ci} style={{ borderBottom: "1px solid color-mix(in srgb, var(--neo-ink) 15%, transparent)", padding: 8 }}>
-                {cell}
-              </td>
+              <td key={ci}>{cell}</td>
             ))}
           </tr>
         ))}
@@ -254,9 +353,9 @@ export function NeoTable({ columns, rows }: { columns: string[]; rows: string[][
 
 export function NeoList({ items }: { items: ReactNode[] }) {
   return (
-    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+    <ul className="neo-list">
       {items.map((item, i) => (
-        <li key={i} style={{ borderBottom: "1px solid color-mix(in srgb, var(--neo-ink) 15%, transparent)", padding: "8px 0" }}>
+        <li key={i} className="neo-list__item">
           {item}
         </li>
       ))}
@@ -264,16 +363,19 @@ export function NeoList({ items }: { items: ReactNode[] }) {
   );
 }
 
-export function NeoAvatar({ label }: { label: string }) {
+export function NeoAvatar({ label, src, alt }: { label: string; src?: string; alt?: string }) {
   return (
-    <span style={{ display: "inline-grid", placeItems: "center", width: 40, height: 40, borderRadius: "50%", border: "2px solid var(--neo-ink)" }}>
-      {label.slice(0, 1).toUpperCase()}
+    <span className="neo-avatar" aria-label={alt ?? label}>
+      {src ? <img src={src} alt={alt ?? label} /> : label.slice(0, 1).toUpperCase()}
     </span>
   );
 }
 
-export const NeoDivider = forwardRef<HTMLHRElement, HTMLAttributes<HTMLHRElement>>(function NeoDivider(props, ref) {
-  return <hr ref={ref} style={{ border: "none", borderTop: "1px solid var(--neo-ink-muted)", margin: "16px 0" }} {...props} />;
+export const NeoDivider = forwardRef<HTMLHRElement, HTMLAttributes<HTMLHRElement>>(function NeoDivider(
+  { className, ...props },
+  ref,
+) {
+  return <hr ref={ref} className={cn("neo-divider", className)} {...props} />;
 });
 
 void createElement;

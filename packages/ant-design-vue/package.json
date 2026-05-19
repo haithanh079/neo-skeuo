@@ -16,5 +16,10 @@
   "scripts": { "build": "tsup" },
   "peerDependencies": { "ant-design-vue": ">=4", "vue": ">=3.4" },
   "dependencies": { "@neo-skeuo/tokens": "0.1.0-alpha.0", "@neo-skeuo/vue": "0.1.0-alpha.0" },
-  "devDependencies": { "tsup": "^8.3.5", "typescript": "^5.7.2", "vue": "^3.5.13" }
+  "devDependencies": {
+    "ant-design-vue": "^4.2.6",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vue": "^3.5.13"
+  }
 }
