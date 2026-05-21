@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/ant-design-vue",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Neo-skeuo Ant Design Vue provider",
   "license": "MIT",
   "type": "module",
@@ -23,8 +23,7 @@
     "vue": ">=3.4"
   },
   "dependencies": {
-    "@neo-skeuo/tokens": "1.0.0",
-    "@neo-skeuo/vue": "1.0.0"
+    "@neo-skeuo/tokens": "1.1.0"
   },
   "devDependencies": {
     "ant-design-vue": "^4.2.6",

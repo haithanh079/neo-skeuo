@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/refine",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Neo-skeuo Refine + Ant Design root shell",
   "license": "MIT",
   "type": "module",
@@ -28,7 +28,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@neo-skeuo/antd": "1.0.0"
+    "@neo-skeuo/tokens": "1.1.0"
   },
   "devDependencies": {
     "@refinedev/core": "^4.57.0",

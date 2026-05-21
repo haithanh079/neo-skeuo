@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/antd",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Neo-skeuo Ant Design 5 provider and theme",
   "license": "MIT",
   "type": "module",
@@ -27,8 +27,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@neo-skeuo/react": "1.0.0",
-    "@neo-skeuo/tokens": "1.0.0"
+    "@neo-skeuo/tokens": "1.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.18",

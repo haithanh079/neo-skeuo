@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/web-css",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Neo-skeuo CSS tokens, utilities, and Ant Design overrides",
   "license": "MIT",
   "type": "module",
@@ -18,7 +18,7 @@
     "src"
   ],
   "peerDependencies": {
-    "@neo-skeuo/assets": "1.0.0"
+    "@neo-skeuo/tokens": "1.1.0"
   },
   "scripts": {
     "build": "node -e \"console.log('web-css: static assets, no build')\""

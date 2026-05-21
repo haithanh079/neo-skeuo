@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/svelte",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Neo-skeuo Svelte 5 primitives",
   "license": "MIT",
   "type": "module",
@@ -26,6 +26,6 @@
     "svelte": ">=5"
   },
   "dependencies": {
-    "@neo-skeuo/tokens": "1.0.0"
+    "@neo-skeuo/tokens": "1.1.0"
   }
 }

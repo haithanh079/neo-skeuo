@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/react-native",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Neo-skeuo React Native primitives",
   "license": "MIT",
   "type": "module",
@@ -27,7 +27,7 @@
     "react-native-svg": ">=15"
   },
   "dependencies": {
-    "@neo-skeuo/tokens": "1.0.0"
+    "@neo-skeuo/tokens": "1.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.18",

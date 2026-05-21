@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/tokens",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Neo-skeuo design tokens (light/dark) and theme serializers",
   "license": "MIT",
   "type": "module",
