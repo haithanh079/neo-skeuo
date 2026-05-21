@@ -23,8 +23,7 @@
     "typecheck": "npm run typecheck -w @neo-skeuo/tokens && npm run typecheck -w @neo-skeuo/react && npm run typecheck -w @neo-skeuo/antd && npm run typecheck -w @neo-skeuo/refine && npm run typecheck -w @neo-skeuo/vue && npm run typecheck -w @neo-skeuo/react-native && npm run typecheck -w @neo-skeuo/assets",
     "storybook": "npm run dev -w storybook-web",
     "metadata:sync": "node scripts/sync-package-metadata.mjs",
-    "catalog:sync": "node scripts/sync-catalog.mjs",
-    "catalog:build": "node scripts/build-initial-catalog.mjs && node scripts/sync-catalog.mjs"
+    "catalog:sync": "node scripts/sync-catalog.mjs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",

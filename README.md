@@ -49,7 +49,7 @@ import "@neo-skeuo/web-css/antd/index.css";
 
 Use `NeoRefineRoot` for themed Ant Design only. Use `NeoRefineApp` when you also use `@refinedev/core` (wraps `<Refine>`).
 
-See [MIGRATION.md](./MIGRATION.md) for moving off inline admin themes.
+Stack-specific setup: [docs/recipes/](docs/recipes/) and [AGENTS.md](./AGENTS.md).
 
 ## Development
 

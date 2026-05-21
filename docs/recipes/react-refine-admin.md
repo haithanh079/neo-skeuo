@@ -14,7 +14,7 @@ npm install @refinedev/core
 import { NeoRefineRoot } from "@neo-skeuo/refine";
 import "@neo-skeuo/web-css/index.css";
 import "@neo-skeuo/web-css/antd/index.css";
-import "@neo-skeuo/web-css/refine/index.css";
+import "@neo-skeuo/web-css/refine.css";
 
 export function App() {
   return (

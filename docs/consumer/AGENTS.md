@@ -17,7 +17,7 @@ Do not add `@neo-skeuo/vue`, `@neo-skeuo/svelte`, or `@neo-skeuo/react-native` u
 
 - Import `@neo-skeuo/web-css` **before** application overrides.
 - Ant apps: `index.css` then `antd/index.css`.
-- Refine admin: also `refine/index.css`.
+- Refine admin: also `refine.css`.
 - Details: [css.imports.md](../css.imports.md) in the neo-skeuo repo (or your vendored copy).
 
 ## React primitives

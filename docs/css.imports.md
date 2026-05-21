@@ -10,9 +10,8 @@ Import neo-skeuo CSS **before** your app’s custom styles so tokens and compone
 | `@neo-skeuo/web-css/tokens.css` | CSS variables only (light) |
 | `@neo-skeuo/web-css/tokens-dark.css` | CSS variables only (dark) |
 | `@neo-skeuo/web-css/components.css` | primitive classes only |
-| `@neo-skeuo/web-css/motion.css` | animations + `prefers-reduced-motion` |
 | `@neo-skeuo/web-css/antd/index.css` | Ant Design 5 overrides |
-| `@neo-skeuo/web-css/refine/index.css` | admin layout chrome |
+| `@neo-skeuo/web-css/refine.css` | admin layout chrome |
 
 ## Stacks (order matters)
 
@@ -38,7 +37,7 @@ Use `NeoSkeuoAntdProvider` or `NeoRefineRoot` — both set `neo-skeuo` on the ro
 ```ts
 import "@neo-skeuo/web-css/index.css";
 import "@neo-skeuo/web-css/antd/index.css";
-import "@neo-skeuo/web-css/refine/index.css";
+import "@neo-skeuo/web-css/refine.css";
 ```
 
 ### Tokens without full components bundle

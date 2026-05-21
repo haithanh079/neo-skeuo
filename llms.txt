@@ -47,10 +47,9 @@ Decorators: apps/storybook-web/stories/decorators.tsx
 
 @neo-skeuo/vue, @neo-skeuo/svelte, @neo-skeuo/react-native, @neo-skeuo/ant-design-vue (Alpha)
 
-## Migration
+## Consumer apps
 
-- Consumer apps: docs/consumer/AGENTS.md
-- Book Bingo Fair: docs/migration/book-bingo-fair.md
+- docs/consumer/AGENTS.md
 
 ## External docs (published npm)
 

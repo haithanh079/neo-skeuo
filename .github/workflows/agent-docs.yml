@@ -7,7 +7,7 @@ on:
       - "docs/components.catalog.json"
       - "scripts/sync-catalog.mjs"
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - "packages/react/**"
       - "docs/components.catalog.json"

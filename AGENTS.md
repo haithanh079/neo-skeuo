@@ -63,7 +63,7 @@ import "@neo-skeuo/web-css/antd/index.css";
 import { NeoRefineRoot } from "@neo-skeuo/refine"; // or NeoRefineApp if using @refinedev/core
 import "@neo-skeuo/web-css/index.css";
 import "@neo-skeuo/web-css/antd/index.css";
-import "@neo-skeuo/web-css/refine/index.css";
+import "@neo-skeuo/web-css/refine.css";
 ```
 
 See [docs/recipes/react-refine-admin.md](docs/recipes/react-refine-admin.md).

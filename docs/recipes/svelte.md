@@ -26,4 +26,4 @@ npm install @neo-skeuo/svelte @neo-skeuo/web-css
 import "@neo-skeuo/web-css/index.css";
 ```
 
-Runnable demo: [apps/example-sveltekit](../../apps/example-sveltekit).
+Canonical UI examples: run `npm run storybook` from the monorepo root (see [AGENTS.md](../../AGENTS.md)).

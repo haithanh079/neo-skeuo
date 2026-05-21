@@ -155,7 +155,7 @@
       "requires": [
         "@neo-skeuo/web-css/index.css",
         "@neo-skeuo/web-css/antd/index.css",
-        "@neo-skeuo/web-css/refine/index.css"
+        "@neo-skeuo/web-css/refine.css"
       ],
       "story": "Neo/Ant Design/Refine"
     },
