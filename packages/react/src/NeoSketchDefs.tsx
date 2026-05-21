@@ -1,3 +1,7 @@
+/**
+ * Inline SVG filters for the skeuo sketch effect (`#neo-sketch`).
+ * Render once per app inside `NeoProvider` (included in `NeoSkeuoAntdProvider`).
+ */
 export function NeoSketchDefs() {
   return (
     <svg aria-hidden style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}>

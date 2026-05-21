@@ -15,6 +15,7 @@ import { primitiveMeta } from "./decorators";
 const meta: Meta = {
   ...primitiveMeta,
   title: "Neo/Primitives/Feedback",
+  component: NeoModal,
 };
 export default meta;
 
@@ -44,6 +45,19 @@ function ModalDemo() {
 }
 
 export const Modal: StoryObj = {
+  tags: ["agent-canonical"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Controlled dialog with focus trap, Escape, and backdrop click. Requires `open`, `onClose`, optional `title`.",
+      },
+    },
+  },
+  argTypes: {
+    open: { control: "boolean", description: "Whether the modal is visible" },
+    title: { control: "text", description: "Dialog title (sets aria-labelledby)" },
+  },
   render: () => <ModalDemo />,
 };
 

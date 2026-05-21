@@ -1,0 +1,57 @@
+# @neo-skeuo
+
+> Neo-skeuomorphic UI monorepo. Read AGENTS.md first.
+
+## Agent entry
+
+- [AGENTS.md](AGENTS.md) — package routing, required setup, anti-patterns, verify commands
+- [docs/components.catalog.json](docs/components.catalog.json) — machine-readable components
+- [docs/css.imports.md](docs/css.imports.md) — CSS entrypoints and import order
+- [docs/recipes/](docs/recipes/) — minimal examples per stack
+- [docs/consumer/AGENTS.md](docs/consumer/AGENTS.md) — consumer app rules
+
+## Packages (maturity)
+
+| Package | Maturity | README |
+|---------|----------|--------|
+| @neo-skeuo/tokens | Production | packages/tokens/README.md |
+| @neo-skeuo/assets | Production | packages/assets/README.md |
+| @neo-skeuo/web-css | Production | packages/web-css/README.md |
+| @neo-skeuo/antd | Production | packages/antd/README.md |
+| @neo-skeuo/react | Beta | packages/react/README.md |
+| @neo-skeuo/refine | Beta | packages/refine/README.md |
+| @neo-skeuo/vue | Alpha | packages/vue/README.md |
+| @neo-skeuo/ant-design-vue | Alpha | packages/ant-design-vue/README.md |
+| @neo-skeuo/svelte | Alpha | packages/svelte/README.md |
+| @neo-skeuo/react-native | Alpha | packages/react-native/README.md |
+
+## Storybook (canonical examples)
+
+Primitives (NeoProvider + NeoSketchDefs): `Neo/Primitives/*`
+- Actions, Form, Layout, Display, Data, Navigation, Feedback
+
+Ant Design (NeoSkeuoAntdProvider): `Neo/Ant Design/*`
+- Actions, Form, Layout, Display, Data, Grid, Feedback, Overlay, Refine
+- Tier 2: Inputs, Content, Extras
+
+Decorators: apps/storybook-web/stories/decorators.tsx
+
+## Quick routing
+
+- Admin + Refine → @neo-skeuo/refine + web-css (index, antd, refine)
+- Ant only → @neo-skeuo/antd + web-css (index, antd)
+- Custom React UI → @neo-skeuo/react + web-css/index.css + NeoSketchDefs
+- Tokens only → @neo-skeuo/tokens
+
+## Do not suggest without user request
+
+@neo-skeuo/vue, @neo-skeuo/svelte, @neo-skeuo/react-native, @neo-skeuo/ant-design-vue (Alpha)
+
+## Migration
+
+- Consumer apps: docs/consumer/AGENTS.md
+- Book Bingo Fair: docs/migration/book-bingo-fair.md
+
+## External docs (published npm)
+
+Index this repo on Context7 or your docs site so agents resolve the installed package version.

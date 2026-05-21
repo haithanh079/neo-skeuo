@@ -6,8 +6,10 @@ import {
   type NeoThemeMode,
 } from "@neo-skeuo/tokens";
 
+/** Props for the root theme wrapper. Sets `className` (default `neo-skeuo`) and `data-neo-theme` on the app root. */
 export type NeoProviderProps = {
   children: ReactNode;
+  /** `light`, `dark`, or `system` (follows prefers-color-scheme). */
   theme?: NeoThemeMode;
   className?: string;
   onThemeChange?: (resolved: NeoResolvedTheme) => void;
@@ -21,6 +23,10 @@ type NeoContextValue = {
 
 const NeoContext = createContext<NeoContextValue | null>(null);
 
+/**
+ * Required root wrapper for all `@neo-skeuo/react` primitives.
+ * Import `@neo-skeuo/web-css/index.css` in your app entry.
+ */
 export function NeoProvider({ children, theme = "light", className = "neo-skeuo", onThemeChange }: NeoProviderProps) {
   const [mode, setMode] = useState<NeoThemeMode>(theme);
   const [systemDark, setSystemDark] = useState(false);
@@ -49,6 +55,7 @@ export function NeoProvider({ children, theme = "light", className = "neo-skeuo"
   );
 }
 
+/** Returns resolved theme and `setMode`. Throws if used outside `NeoProvider`. */
 export function useNeoTheme() {
   const ctx = useContext(NeoContext);
   if (!ctx) throw new Error("useNeoTheme must be used within NeoProvider");

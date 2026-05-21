@@ -1,5 +1,6 @@
 import type { NeoResolvedTheme, NeoThemeMode } from "./types.js";
 
+/** Resolves `light` | `dark` | `system` to a concrete `light` or `dark` theme. */
 export function resolveThemeMode(
   mode: NeoThemeMode,
   prefersDark: boolean = getSystemPrefersDark(),

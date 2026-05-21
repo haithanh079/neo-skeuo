@@ -1,7 +1,10 @@
 import { getTokens } from "./palettes.js";
 import type { NeoResolvedTheme } from "./types.js";
 
-/** Ant Design 5 ThemeConfig-compatible object (antd is optional peer). */
+/**
+ * Ant Design 5 `ThemeConfig`-compatible object.
+ * Use with `ConfigProvider` or via `NeoSkeuoAntdProvider` from `@neo-skeuo/antd`.
+ */
 export function toAntdTheme(mode: NeoResolvedTheme) {
   const t = getTokens(mode);
   const { ink, paper, surface, inkMuted, inkFaint, inset } = t.color;

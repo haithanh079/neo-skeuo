@@ -64,6 +64,7 @@ const dark: NeoTokenSet = {
     "repeating-linear-gradient(-45deg, transparent, transparent 3px, rgba(242, 239, 232, 0.08) 3px, rgba(242, 239, 232, 0.08) 4px)",
 };
 
+/** Full token set for `light` or `dark` (not `system` — resolve first with `resolveThemeMode`). */
 export function getTokens(mode: NeoResolvedTheme): NeoTokenSet {
   return mode === "dark" ? { ...dark } : { ...light };
 }

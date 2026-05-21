@@ -2,6 +2,8 @@
 
 Neo-skeuomorphic UI kit — publishable npm monorepo.
 
+**AI agents:** start with [AGENTS.md](./AGENTS.md) and [llms.txt](./llms.txt).
+
 ## Packages
 
 | Package | Description | Maturity |

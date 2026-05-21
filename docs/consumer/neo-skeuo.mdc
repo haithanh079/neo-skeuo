@@ -1,0 +1,14 @@
+---
+description: Rules for using @neo-skeuo npm packages in this app
+globs:
+  - "**/*.{tsx,ts,jsx,js,vue,svelte}"
+---
+
+# @neo-skeuo
+
+- Import `@neo-skeuo/web-css` before app custom CSS.
+- React primitives: `NeoProvider` + one `NeoSketchDefs` at root; import `@neo-skeuo/web-css/index.css`.
+- Admin / CRUD: use `@neo-skeuo/refine` or `@neo-skeuo/antd`, not `NeoTable` from `@neo-skeuo/react`.
+- Ant stack: import both `web-css/index.css` and `web-css/antd/index.css`.
+- Do not add Alpha packages (vue, svelte, react-native) unless the user explicitly requests them.
+- For API details, prefer Context7 / installed package types over guessing prop names.

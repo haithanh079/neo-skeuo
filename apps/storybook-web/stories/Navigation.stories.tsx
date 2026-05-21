@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { NeoBreadcrumb, NeoButton, NeoPagination, NeoSteps, NeoTabs, NeoTooltip } from "@neo-skeuo/react";
+import { NeoBreadcrumb, NeoButton, NeoPagination, NeoPopover, NeoSteps, NeoTabs, NeoTooltip } from "@neo-skeuo/react";
 import { primitiveMeta } from "./decorators";
 
 const meta: Meta = {
   ...primitiveMeta,
   title: "Neo/Primitives/Navigation",
+  component: NeoTabs,
 };
 export default meta;
 
@@ -15,6 +16,19 @@ function TabsDemo() {
 }
 
 export const Tabs: StoryObj = {
+  tags: ["agent-canonical"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Tablist with `tabs` string[] or `items` with panels. Controlled via `active` + `onChange`.",
+      },
+    },
+  },
+  argTypes: {
+    active: { control: "text", description: "Key of the active tab" },
+    tabs: { control: "object", description: "Simple string labels when not using items[]" },
+  },
   render: () => <TabsDemo />,
 };
 
@@ -48,5 +62,25 @@ export const Tooltip: StoryObj = {
     <NeoTooltip label="Delete this row">
       <NeoButton variant="ghost">Hover me</NeoButton>
     </NeoTooltip>
+  ),
+};
+
+export const Popover: StoryObj = {
+  tags: ["agent-canonical"],
+  parameters: {
+    docs: {
+      description: {
+        component: "Click-triggered panel. Supports controlled `open` / `onOpenChange` or uncontrolled `defaultOpen`.",
+      },
+    },
+  },
+  argTypes: {
+    content: { control: "text", description: "Panel body" },
+    defaultOpen: { control: "boolean" },
+  },
+  render: () => (
+    <NeoPopover content="Extra actions for this row">
+      <NeoButton variant="ghost">Open popover</NeoButton>
+    </NeoPopover>
   ),
 };

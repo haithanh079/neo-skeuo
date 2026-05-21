@@ -1,0 +1,866 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Machine-readable @neo-skeuo component catalog for AI agents",
+    "syncedAt": "2026-05-21",
+    "generatedExports": [
+      "NeoAlert",
+      "NeoAvatar",
+      "NeoBadge",
+      "NeoBreadcrumb",
+      "NeoButton",
+      "NeoCard",
+      "NeoCheckbox",
+      "NeoColorPicker",
+      "NeoContainer",
+      "NeoDivider",
+      "NeoEmpty",
+      "NeoField",
+      "NeoFlex",
+      "NeoGrid",
+      "NeoInput",
+      "NeoInputNumber",
+      "NeoList",
+      "NeoModal",
+      "NeoPagination",
+      "NeoPopconfirm",
+      "NeoPopover",
+      "NeoProgress",
+      "NeoProvider",
+      "NeoRadio",
+      "NeoSelect",
+      "NeoSkeleton",
+      "NeoSketchDefs",
+      "NeoSlider",
+      "NeoSpinner",
+      "NeoStack",
+      "NeoSteps",
+      "NeoSurface",
+      "NeoSwitch",
+      "NeoTable",
+      "NeoTabs",
+      "NeoTag",
+      "NeoTextarea",
+      "NeoToast",
+      "NeoToastProvider",
+      "NeoTooltip",
+      "NeoTree",
+      "useNeoTheme",
+      "useNeoToast"
+    ]
+  },
+  "providers": [
+    {
+      "name": "NeoProvider",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "provider",
+      "requires": [
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {
+        "theme": [
+          "light",
+          "dark",
+          "system"
+        ],
+        "className": "string"
+      },
+      "story": null,
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSketchDefs",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "provider",
+      "requires": [
+        "NeoProvider"
+      ],
+      "variants": {},
+      "props": {},
+      "story": null,
+      "doNotUseFor": [],
+      "note": "Render once per app; required for sketch SVG filter"
+    },
+    {
+      "name": "NeoToastProvider",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "provider",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs"
+      ],
+      "variants": {},
+      "props": {},
+      "story": null,
+      "doNotUseFor": []
+    },
+    {
+      "name": "useNeoTheme",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "hook",
+      "requires": [
+        "NeoProvider"
+      ],
+      "variants": {},
+      "props": {},
+      "story": null,
+      "doNotUseFor": []
+    },
+    {
+      "name": "useNeoToast",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "hook",
+      "requires": [
+        "NeoToastProvider"
+      ],
+      "variants": {},
+      "props": {},
+      "story": null,
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSkeuoAntdProvider",
+      "package": "@neo-skeuo/antd",
+      "exportPath": "@neo-skeuo/antd",
+      "maturity": "production",
+      "kind": "provider",
+      "requires": [
+        "@neo-skeuo/web-css/index.css",
+        "@neo-skeuo/web-css/antd/index.css"
+      ],
+      "includes": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "antd ConfigProvider"
+      ],
+      "story": "Neo/Ant Design"
+    },
+    {
+      "name": "NeoRefineRoot",
+      "package": "@neo-skeuo/refine",
+      "exportPath": "@neo-skeuo/refine",
+      "maturity": "beta",
+      "kind": "provider",
+      "requires": [
+        "@neo-skeuo/web-css/index.css",
+        "@neo-skeuo/web-css/antd/index.css",
+        "@neo-skeuo/web-css/refine/index.css"
+      ],
+      "story": "Neo/Ant Design/Refine"
+    },
+    {
+      "name": "NeoRefineApp",
+      "package": "@neo-skeuo/refine",
+      "exportPath": "@neo-skeuo/refine",
+      "maturity": "beta",
+      "kind": "provider",
+      "requires": [
+        "NeoRefineRoot",
+        "@refinedev/core"
+      ],
+      "story": "Neo/Ant Design/Refine"
+    }
+  ],
+  "components": [
+    {
+      "name": "NeoAlert",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {
+        "variant": [
+          "info",
+          "success",
+          "warning",
+          "error"
+        ]
+      },
+      "props": {},
+      "story": "Neo/Primitives/Feedback/Alert",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoAvatar",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Display",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoBadge",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Display",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoBreadcrumb",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Navigation/Breadcrumb",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoButton",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {
+        "variant": [
+          "primary",
+          "default",
+          "ghost",
+          "danger"
+        ]
+      },
+      "props": {
+        "loading": "boolean"
+      },
+      "story": "Neo/Primitives/Actions/ButtonVariants",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoCard",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/FormCard",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoCheckbox",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/Toggles",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoColorPicker",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": null,
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoContainer",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Layout",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoDivider",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Layout",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoEmpty",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Feedback/Empty",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoField",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {
+        "label": "string",
+        "hint": "string",
+        "error": "string",
+        "required": "boolean",
+        "htmlFor": "string"
+      },
+      "story": "Neo/Primitives/Form",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoFlex",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Layout",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoGrid",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Layout",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoInput",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/Inputs",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoInputNumber",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/Inputs",
+      "doNotUseFor": [],
+      "note": "alias of NeoInput"
+    },
+    {
+      "name": "NeoList",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Data",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoModal",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {
+        "open": "boolean",
+        "title": "ReactNode",
+        "onClose": "() => void"
+      },
+      "story": "Neo/Primitives/Feedback/Modal",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoPagination",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Navigation/Pagination",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoPopconfirm",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": null,
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoPopover",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {
+        "content": "ReactNode",
+        "open": "boolean",
+        "defaultOpen": "boolean",
+        "onOpenChange": "(open: boolean) => void"
+      },
+      "story": "Neo/Primitives/Navigation/Popover",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoProgress",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Feedback/Progress",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoRadio",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/Toggles",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSelect",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/Inputs",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSkeleton",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Feedback/Skeleton",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSlider",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/Toggles",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSpinner",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Feedback/Spinner",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoStack",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Layout",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSteps",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Navigation/Steps",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSurface",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {
+        "elevation": [
+          "flat",
+          "raised",
+          "inset",
+          "pressed"
+        ]
+      },
+      "props": {},
+      "story": "Neo/Primitives/Layout",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoSwitch",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/Toggles",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoTable",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Data",
+      "doNotUseFor": [
+        "Admin tables with sort/filter/pagination — use Ant Design Table via @neo-skeuo/antd"
+      ]
+    },
+    {
+      "name": "NeoTabs",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {
+        "active": "string",
+        "onChange": "(key) => void",
+        "tabs": "string[]",
+        "items": "NeoTabItem[]"
+      },
+      "story": "Neo/Primitives/Navigation/Tabs",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoTag",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Display",
+      "doNotUseFor": [],
+      "note": "alias of NeoBadge"
+    },
+    {
+      "name": "NeoTextarea",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Form/Inputs",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoToast",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": "Neo/Primitives/Feedback/Toast",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoTooltip",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {
+        "label": "string"
+      },
+      "story": "Neo/Primitives/Navigation/Tooltip",
+      "doNotUseFor": []
+    },
+    {
+      "name": "NeoTree",
+      "package": "@neo-skeuo/react",
+      "exportPath": "@neo-skeuo/react",
+      "maturity": "beta",
+      "kind": "component",
+      "requires": [
+        "NeoProvider",
+        "NeoSketchDefs",
+        "@neo-skeuo/web-css/index.css"
+      ],
+      "variants": {},
+      "props": {},
+      "story": null,
+      "doNotUseFor": []
+    }
+  ],
+  "tokenUtilities": [
+    {
+      "name": "getTokens",
+      "package": "@neo-skeuo/tokens",
+      "story": null
+    },
+    {
+      "name": "toAntdTheme",
+      "package": "@neo-skeuo/tokens",
+      "story": null
+    },
+    {
+      "name": "toAntDesignVueTheme",
+      "package": "@neo-skeuo/tokens",
+      "story": null
+    },
+    {
+      "name": "toCssVariables",
+      "package": "@neo-skeuo/tokens",
+      "story": null
+    },
+    {
+      "name": "resolveThemeMode",
+      "package": "@neo-skeuo/tokens",
+      "story": null
+    },
+    {
+      "name": "getSurfaceStyle",
+      "package": "@neo-skeuo/tokens",
+      "story": null
+    }
+  ]
+}

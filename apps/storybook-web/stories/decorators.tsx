@@ -22,11 +22,13 @@ export const withNeoAntd: Decorator = (Story) => (
 export const primitiveMeta: Meta = {
   decorators: [withNeoPrimitives],
   parameters: { layout: "padded" },
+  tags: ["agent-canonical"],
 };
 
 export const antdMeta: Meta = {
   decorators: [withNeoAntd],
   parameters: { layout: "padded" },
+  tags: ["agent-canonical"],
 };
 
 /** Stateful helper for stories that need hooks */

@@ -1,6 +1,7 @@
 import { getTokens } from "./palettes.js";
 import type { NeoResolvedTheme } from "./types.js";
 
+/** CSS block of `--neo-*` variables for injection or build pipelines. */
 export function toCssVariables(mode: NeoResolvedTheme, scope = ".neo-skeuo"): string {
   const t = getTokens(mode);
   const suffix = mode === "dark" ? '[data-neo-theme="dark"]' : '[data-neo-theme="light"]';
