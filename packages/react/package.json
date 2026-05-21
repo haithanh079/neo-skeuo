@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/react",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Neo-skeuo React primitives for web",
   "license": "MIT",
   "type": "module",
@@ -15,6 +15,8 @@
     }
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "dist"
   ],
   "scripts": {
@@ -27,19 +29,44 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@neo-skeuo/tokens": "1.1.0"
+    "@neo-skeuo/tokens": "1.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@neo-skeuo/web-css": "1.1.0",
+    "@neo-skeuo/web-css": "1.1.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "jsdom": "^25.0.1",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
-  }
+  },
+  "author": "haithanh079",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haithanh079/neo-skeuo.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/haithanh079/neo-skeuo/issues"
+  },
+  "homepage": "https://github.com/haithanh079/neo-skeuo/tree/master/packages/react#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "components",
+    "design-system",
+    "neo-skeuo",
+    "react",
+    "skeuomorphism",
+    "theme",
+    "ui"
+  ]
 }

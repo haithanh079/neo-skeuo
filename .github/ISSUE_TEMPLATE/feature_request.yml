@@ -1,0 +1,40 @@
+name: Feature request
+description: Suggest an improvement for @neo-skeuo
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - "@neo-skeuo/tokens"
+        - "@neo-skeuo/web-css"
+        - "@neo-skeuo/react"
+        - "@neo-skeuo/antd"
+        - "@neo-skeuo/refine"
+        - "@neo-skeuo/vue"
+        - "@neo-skeuo/svelte"
+        - "@neo-skeuo/react-native"
+        - Monorepo / docs
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What are you trying to build or fix?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false

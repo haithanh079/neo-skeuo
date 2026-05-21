@@ -1,0 +1,36 @@
+{
+  "author": "haithanh079",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haithanh079/neo-skeuo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haithanh079/neo-skeuo/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "baseKeywords": [
+    "design-system",
+    "skeuomorphism",
+    "neo-skeuo",
+    "ui",
+    "theme"
+  ],
+  "packages": {
+    "tokens": ["design-tokens", "css-variables", "antd-theme"],
+    "assets": ["svg", "textures"],
+    "web-css": ["css", "antd", "refine"],
+    "react": ["react", "components"],
+    "antd": ["antd", "ant-design", "react"],
+    "refine": ["refine", "admin", "antd"],
+    "vue": ["vue", "vue3"],
+    "ant-design-vue": ["ant-design-vue", "vue", "vue3"],
+    "svelte": ["svelte", "svelte5"],
+    "react-native": ["react-native", "mobile"]
+  }
+}

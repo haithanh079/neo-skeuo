@@ -1,0 +1,62 @@
+name: Bug report
+description: Report something broken in @neo-skeuo packages
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - "@neo-skeuo/tokens"
+        - "@neo-skeuo/assets"
+        - "@neo-skeuo/web-css"
+        - "@neo-skeuo/react"
+        - "@neo-skeuo/antd"
+        - "@neo-skeuo/refine"
+        - "@neo-skeuo/vue"
+        - "@neo-skeuo/ant-design-vue"
+        - "@neo-skeuo/svelte"
+        - "@neo-skeuo/react-native"
+        - Other / monorepo
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: "e.g. 1.1.1"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Install ...
+        2. Import ...
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - OS:
+        - Node:
+        - Browser / RN / framework versions:
+    validations:
+      required: false

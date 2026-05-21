@@ -1,5 +1,13 @@
 # @neo-skeuo/assets
 
+## 1.1.2
+
+### Patch Changes
+
+- chore: sync npm and repository metadata (repository, homepage, keywords, author, publishConfig)
+
+## 1.1.1
+
 ## 1.1.0
 
 ### Minor Changes

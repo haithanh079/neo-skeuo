@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/tokens",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Neo-skeuo design tokens (light/dark) and theme serializers",
   "license": "MIT",
   "type": "module",
@@ -16,6 +16,8 @@
     "./tokens.json": "./tokens.json"
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "dist",
     "tokens.json"
   ],
@@ -28,5 +30,31 @@
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
-  }
+  },
+  "author": "haithanh079",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haithanh079/neo-skeuo.git",
+    "directory": "packages/tokens"
+  },
+  "bugs": {
+    "url": "https://github.com/haithanh079/neo-skeuo/issues"
+  },
+  "homepage": "https://github.com/haithanh079/neo-skeuo/tree/master/packages/tokens#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "antd-theme",
+    "css-variables",
+    "design-system",
+    "design-tokens",
+    "neo-skeuo",
+    "skeuomorphism",
+    "theme",
+    "ui"
+  ]
 }

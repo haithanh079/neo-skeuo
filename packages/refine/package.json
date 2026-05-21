@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/refine",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Neo-skeuo Refine + Ant Design root shell",
   "license": "MIT",
   "type": "module",
@@ -15,6 +15,8 @@
     }
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "dist"
   ],
   "scripts": {
@@ -28,7 +30,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@neo-skeuo/tokens": "1.1.0"
+    "@neo-skeuo/tokens": "1.1.2"
   },
   "devDependencies": {
     "@refinedev/core": "^4.57.0",
@@ -38,5 +40,31 @@
     "react-dom": "^18.3.1",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
-  }
+  },
+  "author": "haithanh079",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haithanh079/neo-skeuo.git",
+    "directory": "packages/refine"
+  },
+  "bugs": {
+    "url": "https://github.com/haithanh079/neo-skeuo/issues"
+  },
+  "homepage": "https://github.com/haithanh079/neo-skeuo/tree/master/packages/refine#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "admin",
+    "antd",
+    "design-system",
+    "neo-skeuo",
+    "refine",
+    "skeuomorphism",
+    "theme",
+    "ui"
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/ant-design-vue",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Neo-skeuo Ant Design Vue provider",
   "license": "MIT",
   "type": "module",
@@ -13,6 +13,8 @@
     }
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "dist"
   ],
   "scripts": {
@@ -23,12 +25,38 @@
     "vue": ">=3.4"
   },
   "dependencies": {
-    "@neo-skeuo/tokens": "1.1.0"
+    "@neo-skeuo/tokens": "1.1.2"
   },
   "devDependencies": {
     "ant-design-vue": "^4.2.6",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "vue": "^3.5.13"
-  }
+  },
+  "author": "haithanh079",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haithanh079/neo-skeuo.git",
+    "directory": "packages/ant-design-vue"
+  },
+  "bugs": {
+    "url": "https://github.com/haithanh079/neo-skeuo/issues"
+  },
+  "homepage": "https://github.com/haithanh079/neo-skeuo/tree/master/packages/ant-design-vue#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ant-design-vue",
+    "design-system",
+    "neo-skeuo",
+    "skeuomorphism",
+    "theme",
+    "ui",
+    "vue",
+    "vue3"
+  ]
 }

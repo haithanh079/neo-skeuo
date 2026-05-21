@@ -39,6 +39,14 @@ npm run storybook
 - If you add or rename a public export in `packages/react`, run `npm run catalog:sync` and commit [docs/components.catalog.json](./docs/components.catalog.json).
 - Canonical UI examples live in Storybook stories tagged `agent-canonical`.
 
+## Package metadata
+
+Shared npm/Git fields live in [package-metadata.shared.json](./package-metadata.shared.json). After adding a publishable package, register it there and run:
+
+```bash
+npm run metadata:sync
+```
+
 ## Publishing
 
 Uses [Changesets](https://github.com/changesets/changesets).
@@ -46,3 +54,9 @@ Uses [Changesets](https://github.com/changesets/changesets).
 1. Add a changeset: `npx changeset`
 2. Bump versions: `npx changeset version` (commit the result)
 3. Publish via CI: dispatch **Publish @neo-skeuo packages** (`.github/workflows/publish.yml`) with `NPM_TOKEN`, or locally: `npm run build:packages && npm run test:packages && npx changeset publish`
+
+After publish, confirm npm metadata:
+
+```bash
+npm view @neo-skeuo/tokens repository homepage bugs keywords author
+```

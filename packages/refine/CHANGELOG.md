@@ -1,5 +1,20 @@
 # @neo-skeuo/refine
 
+## 1.1.2
+
+### Patch Changes
+
+- chore: sync npm and repository metadata (repository, homepage, keywords, author, publishConfig)
+- Updated dependencies
+  - @neo-skeuo/tokens@1.1.2
+
+## 1.1.1
+
+### Patch Changes
+
+- f1c3e4e: Fix NeoAdminLayout horizontal overflow: constrain flex column and `neo-admin-content` with `minWidth: 0`, `maxWidth: 100%`, and `overflowX: auto` so wide Refine/Ant Design tables scroll inside the content panel instead of breaking the layout.
+  - @neo-skeuo/tokens@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes

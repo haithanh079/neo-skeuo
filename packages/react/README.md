@@ -1,6 +1,13 @@
 # @neo-skeuo/react
 
-React primitives + `NeoProvider`. Import CSS from `@neo-skeuo/web-css`.
+[![npm version](https://img.shields.io/npm/v/@neo-skeuo/react.svg)](https://www.npmjs.com/package/@neo-skeuo/react)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
+
+React primitives + `NeoProvider`. Import CSS from `@neo-skeuo/web-css`. **Beta** maturity.
+
+```bash
+npm install @neo-skeuo/react @neo-skeuo/web-css react react-dom
+```
 
 ```tsx
 import { NeoProvider, NeoButton, NeoSketchDefs } from "@neo-skeuo/react";
@@ -30,3 +37,7 @@ import "@neo-skeuo/web-css/index.css";
 | NeoToastProvider | Yes | Yes | Queue + `aria-live` region |
 
 For full admin UIs (tables, forms, date pickers), use `@neo-skeuo/antd` with `@neo-skeuo/web-css/antd/index.css`.
+
+---
+
+Part of [neo-skeuo](https://github.com/haithanh079/neo-skeuo). See [AGENTS.md](../../AGENTS.md) for stack routing.

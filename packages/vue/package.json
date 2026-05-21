@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/vue",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Neo-skeuo Vue 3 primitives",
   "license": "MIT",
   "type": "module",
@@ -13,6 +13,8 @@
     }
   },
   "files": [
+    "CHANGELOG.md",
+    "README.md",
     "dist"
   ],
   "scripts": {
@@ -23,11 +25,36 @@
     "vue": ">=3.4"
   },
   "dependencies": {
-    "@neo-skeuo/tokens": "1.1.0"
+    "@neo-skeuo/tokens": "1.1.2"
   },
   "devDependencies": {
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "vue": "^3.5.13"
-  }
+  },
+  "author": "haithanh079",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haithanh079/neo-skeuo.git",
+    "directory": "packages/vue"
+  },
+  "bugs": {
+    "url": "https://github.com/haithanh079/neo-skeuo/issues"
+  },
+  "homepage": "https://github.com/haithanh079/neo-skeuo/tree/master/packages/vue#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "design-system",
+    "neo-skeuo",
+    "skeuomorphism",
+    "theme",
+    "ui",
+    "vue",
+    "vue3"
+  ]
 }

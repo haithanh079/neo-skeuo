@@ -1,5 +1,19 @@
 # @neo-skeuo/ant-design-vue
 
+## 1.1.2
+
+### Patch Changes
+
+- chore: sync npm and repository metadata (repository, homepage, keywords, author, publishConfig)
+- Updated dependencies
+  - @neo-skeuo/tokens@1.1.2
+
+## 1.1.1
+
+### Patch Changes
+
+- @neo-skeuo/tokens@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes

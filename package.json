@@ -1,5 +1,16 @@
 {
   "name": "neo-skeuo",
+  "description": "Neo-skeuomorphic UI kit — design tokens, CSS primitives, and framework adapters",
+  "author": "haithanh079",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haithanh079/neo-skeuo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haithanh079/neo-skeuo/issues"
+  },
+  "homepage": "https://github.com/haithanh079/neo-skeuo#readme",
   "private": true,
   "workspaces": [
     "packages/*",
@@ -11,6 +22,7 @@
     "test:packages": "npm run test -w @neo-skeuo/tokens && npm run test -w @neo-skeuo/react",
     "typecheck": "npm run typecheck -w @neo-skeuo/tokens && npm run typecheck -w @neo-skeuo/react && npm run typecheck -w @neo-skeuo/antd && npm run typecheck -w @neo-skeuo/refine && npm run typecheck -w @neo-skeuo/vue && npm run typecheck -w @neo-skeuo/react-native && npm run typecheck -w @neo-skeuo/assets",
     "storybook": "npm run dev -w storybook-web",
+    "metadata:sync": "node scripts/sync-package-metadata.mjs",
     "catalog:sync": "node scripts/sync-catalog.mjs",
     "catalog:build": "node scripts/build-initial-catalog.mjs && node scripts/sync-catalog.mjs"
   },
