@@ -1,9 +1,28 @@
-import { defineComponent, h, type PropType } from "vue";
+import { defineComponent, h, onMounted, onUnmounted, ref, type PropType, type VNode } from "vue";
 import { provideNeoTheme } from "./useNeoTheme.js";
 import type { NeoButtonVariant, NeoElevation, NeoThemeMode } from "@neo-skeuo/tokens";
 
 function cn(...parts: Array<string | false | undefined>) {
   return parts.filter(Boolean).join(" ");
+}
+
+function useDismiss(rootRef: { value: HTMLElement | null }, onDismiss: () => void, isActive: () => boolean) {
+  onMounted(() => {
+    const onDown = (e: MouseEvent) => {
+      if (!isActive()) return;
+      const root = rootRef.value;
+      if (root && !root.contains(e.target as Node)) onDismiss();
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (isActive() && e.key === "Escape") onDismiss();
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    onUnmounted(() => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    });
+  });
 }
 
 export const NeoProvider = defineComponent({
@@ -314,6 +333,149 @@ export const NeoAvatar = defineComponent({
   props: { label: { type: String, required: true } },
   setup(props) {
     return () => h("span", { class: "neo-avatar" }, props.label.slice(0, 1).toUpperCase());
+  },
+});
+
+export const NeoFlex = defineComponent({
+  name: "NeoFlex",
+  props: {
+    direction: { type: String as PropType<"row" | "column">, default: "row" },
+    gap: [Number, String],
+    align: String,
+    justify: String,
+    wrap: String,
+  },
+  setup(props, { slots, attrs }) {
+    return () =>
+      h(
+        "div",
+        {
+          class: ["neo-flex", props.direction === "column" && "neo-flex--col"],
+          style: {
+            gap: typeof props.gap === "number" ? `${props.gap}px` : props.gap,
+            alignItems: props.align,
+            justifyContent: props.justify,
+            flexWrap: props.wrap,
+          },
+          ...attrs,
+        },
+        slots.default?.(),
+      );
+  },
+});
+
+export const NeoColorPicker = defineComponent({
+  name: "NeoColorPicker",
+  setup(_, { attrs }) {
+    return () => h("input", { type: "color", class: "neo-color-picker", ...attrs });
+  },
+});
+
+export const NeoPopover = defineComponent({
+  name: "NeoPopover",
+  props: {
+    open: { type: Boolean, default: undefined },
+    defaultOpen: { type: Boolean, default: false },
+  },
+  emits: ["update:open"],
+  setup(props, { slots, attrs, emit }) {
+    const rootRef = ref<HTMLElement | null>(null);
+    const uncontrolledOpen = ref(props.defaultOpen);
+    const isOpen = () => (props.open !== undefined ? props.open : uncontrolledOpen.value);
+    const setOpen = (next: boolean) => {
+      if (props.open === undefined) uncontrolledOpen.value = next;
+      emit("update:open", next);
+    };
+    useDismiss(rootRef, () => setOpen(false), () => isOpen());
+    return () =>
+      h("div", { ref: rootRef, class: "neo-popover", ...attrs }, [
+        h(
+          "button",
+          {
+            type: "button",
+            class: "neo-popover__trigger",
+            "aria-expanded": isOpen(),
+            onClick: () => setOpen(!isOpen()),
+          },
+          slots.default?.(),
+        ),
+        isOpen()
+          ? h(NeoSurface, { elevation: "raised", class: "neo-popover__bubble", role: "dialog" }, () => slots.content?.())
+          : null,
+      ]);
+  },
+});
+
+export const NeoPopconfirm = defineComponent({
+  name: "NeoPopconfirm",
+  props: {
+    title: { type: [String, Object] as PropType<string | VNode>, required: true },
+    okText: { type: String, default: "OK" },
+    cancelText: { type: String, default: "Cancel" },
+  },
+  emits: ["confirm", "cancel"],
+  setup(props, { slots, emit }) {
+    const rootRef = ref<HTMLElement | null>(null);
+    const open = ref(false);
+    const setOpen = (next: boolean) => {
+      open.value = next;
+    };
+    useDismiss(rootRef, () => setOpen(false), () => open.value);
+    return () =>
+      h("div", { ref: rootRef, class: "neo-popover" }, [
+        h(
+          "button",
+          {
+            type: "button",
+            class: "neo-popover__trigger",
+            "aria-expanded": open.value,
+            onClick: () => setOpen(!open.value),
+          },
+          slots.default?.(),
+        ),
+        open.value
+          ? h(NeoSurface, { elevation: "raised", class: "neo-popover__bubble neo-popconfirm__bubble", role: "dialog" }, () => [
+              h(
+                "div",
+                { class: "neo-popconfirm__title" },
+                typeof props.title === "string" ? props.title : [props.title],
+              ),
+              h("div", { class: "neo-popconfirm__actions" }, [
+                h(NeoButton, { class: "neo-btn--sm", onClick: () => { emit("cancel"); setOpen(false); } }, () => props.cancelText),
+                h(NeoButton, { class: "neo-btn--sm", variant: "primary", onClick: () => { emit("confirm"); setOpen(false); } }, () => props.okText),
+              ]),
+            ])
+          : null,
+      ]);
+  },
+});
+
+export type NeoTreeNode = {
+  key: string;
+  title: string | VNode;
+  children?: NeoTreeNode[];
+};
+
+export const NeoTree = defineComponent({
+  name: "NeoTree",
+  props: {
+    treeData: { type: Array as PropType<NeoTreeNode[]>, required: true }
+  },
+  emits: ["select"],
+  setup(props, { emit }) {
+    const renderNode = (node: NeoTreeNode): VNode => {
+      return h("li", { key: node.key, class: "neo-tree__item" }, [
+        h(
+          "span",
+          { class: "neo-tree__title", onClick: () => emit("select", node.key) },
+          typeof node.title === "string" ? node.title : [node.title],
+        ),
+        node.children && node.children.length > 0
+          ? h("ul", { class: "neo-tree__children" }, node.children.map(renderNode))
+          : null,
+      ]);
+    };
+    return () => h("ul", { class: "neo-tree" }, props.treeData.map(renderNode));
   },
 });
 

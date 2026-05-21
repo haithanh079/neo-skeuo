@@ -4,14 +4,16 @@ import {
   useCallback,
   useId,
   useRef,
+  useState,
   type ButtonHTMLAttributes,
+  type CSSProperties,
   type HTMLAttributes,
   type InputHTMLAttributes,
   type ReactNode,
   type TextareaHTMLAttributes,
 } from "react";
 import { getSurfaceStyle, type NeoButtonVariant, type NeoElevation } from "@neo-skeuo/tokens";
-import { useEscapeKey, useFocusTrap } from "./a11y.js";
+import { useClickOutside, useEscapeKey, useFocusTrap } from "./a11y.js";
 import { useNeoTheme } from "./context.js";
 
 function cn(...parts: Array<string | false | undefined>) {
@@ -377,5 +379,163 @@ export const NeoDivider = forwardRef<HTMLHRElement, HTMLAttributes<HTMLHRElement
 ) {
   return <hr ref={ref} className={cn("neo-divider", className)} {...props} />;
 });
+
+export type NeoFlexProps = HTMLAttributes<HTMLDivElement> & {
+  direction?: "row" | "column";
+  gap?: number | string;
+  align?: CSSProperties["alignItems"];
+  justify?: CSSProperties["justifyContent"];
+  wrap?: CSSProperties["flexWrap"];
+};
+
+export const NeoFlex = forwardRef<HTMLDivElement, NeoFlexProps>(function NeoFlex(
+  { direction = "row", gap, align, justify, wrap, className, style, ...rest },
+  ref,
+) {
+  return (
+    <div
+      ref={ref}
+      className={cn("neo-flex", direction === "column" && "neo-flex--col", className)}
+      style={{
+        gap: typeof gap === "number" ? `${gap}px` : gap,
+        alignItems: align,
+        justifyContent: justify,
+        flexWrap: wrap,
+        ...style,
+      }}
+      {...rest}
+    />
+  );
+});
+
+export type NeoColorPickerProps = InputHTMLAttributes<HTMLInputElement>;
+
+export const NeoColorPicker = forwardRef<HTMLInputElement, NeoColorPickerProps>(function NeoColorPicker(
+  { className, ...rest },
+  ref,
+) {
+  return <input ref={ref} type="color" className={cn("neo-color-picker", className)} {...rest} />;
+});
+
+export type NeoPopoverProps = {
+  content: ReactNode;
+  children: ReactNode;
+  className?: string;
+  open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+};
+
+export function NeoPopover({ content, children, className, open: openProp, defaultOpen = false, onOpenChange }: NeoPopoverProps) {
+  const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const controlled = openProp !== undefined;
+  const open = controlled ? openProp : uncontrolledOpen;
+
+  const setOpen = useCallback(
+    (next: boolean) => {
+      if (!controlled) setUncontrolledOpen(next);
+      onOpenChange?.(next);
+    },
+    [controlled, onOpenChange],
+  );
+
+  useClickOutside(rootRef, () => setOpen(false), open);
+  useEscapeKey(() => setOpen(false), open);
+
+  return (
+    <div ref={rootRef} className={cn("neo-popover", className)}>
+      <button type="button" className="neo-popover__trigger" aria-expanded={open} onClick={() => setOpen(!open)}>
+        {children}
+      </button>
+      {open ? (
+        <NeoSurface elevation="raised" className="neo-popover__bubble" role="dialog">
+          {content}
+        </NeoSurface>
+      ) : null}
+    </div>
+  );
+}
+
+export type NeoPopconfirmProps = {
+  title: ReactNode;
+  onConfirm?: () => void;
+  onCancel?: () => void;
+  okText?: string;
+  cancelText?: string;
+  children: ReactNode;
+  className?: string;
+};
+
+export function NeoPopconfirm({
+  title,
+  onConfirm,
+  onCancel,
+  okText = "OK",
+  cancelText = "Cancel",
+  children,
+  className,
+}: NeoPopconfirmProps) {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useClickOutside(rootRef, () => setOpen(false), open);
+  useEscapeKey(() => setOpen(false), open);
+
+  return (
+    <div ref={rootRef} className={cn("neo-popover", className)}>
+      <button type="button" className="neo-popover__trigger" aria-expanded={open} onClick={() => setOpen(!open)}>
+        {children}
+      </button>
+      {open ? (
+        <NeoSurface elevation="raised" className="neo-popover__bubble neo-popconfirm__bubble" role="dialog">
+          <div className="neo-popconfirm__title">{title}</div>
+          <div className="neo-popconfirm__actions">
+            <NeoButton className="neo-btn--sm" onClick={() => { onCancel?.(); setOpen(false); }}>
+              {cancelText}
+            </NeoButton>
+            <NeoButton className="neo-btn--sm" variant="primary" onClick={() => { onConfirm?.(); setOpen(false); }}>
+              {okText}
+            </NeoButton>
+          </div>
+        </NeoSurface>
+      ) : null}
+    </div>
+  );
+}
+
+export type NeoTreeNode = {
+  key: string;
+  title: ReactNode;
+  children?: NeoTreeNode[];
+};
+
+export type NeoTreeProps = {
+  treeData: NeoTreeNode[];
+  onSelect?: (key: string) => void;
+  className?: string;
+};
+
+export function NeoTree({ treeData, onSelect, className }: NeoTreeProps) {
+  const renderNode = (node: NeoTreeNode) => {
+    return (
+      <li key={node.key} className="neo-tree__item">
+        <span className="neo-tree__title" onClick={() => onSelect?.(node.key)}>
+          {node.title}
+        </span>
+        {node.children && node.children.length > 0 && (
+          <ul className="neo-tree__children">
+            {node.children.map(renderNode)}
+          </ul>
+        )}
+      </li>
+    );
+  };
+  return (
+    <ul className={cn("neo-tree", className)}>
+      {treeData.map(renderNode)}
+    </ul>
+  );
+}
 
 void createElement;

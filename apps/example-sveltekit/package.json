@@ -7,8 +7,8 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@neo-skeuo/svelte": "0.1.0-alpha.0",
-    "@neo-skeuo/web-css": "0.1.0-alpha.0"
+    "@neo-skeuo/svelte": "1.0.0",
+    "@neo-skeuo/web-css": "1.0.0"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",

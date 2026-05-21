@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/antd",
-  "version": "0.1.0-alpha.0",
+  "version": "1.0.0",
   "description": "Neo-skeuo Ant Design 5 provider and theme",
   "license": "MIT",
   "type": "module",
@@ -14,7 +14,9 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit"
@@ -25,8 +27,8 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@neo-skeuo/react": "0.1.0-alpha.0",
-    "@neo-skeuo/tokens": "0.1.0-alpha.0"
+    "@neo-skeuo/react": "1.0.0",
+    "@neo-skeuo/tokens": "1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.18",

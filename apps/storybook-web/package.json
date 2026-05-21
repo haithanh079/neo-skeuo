@@ -7,9 +7,9 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "@neo-skeuo/antd": "0.1.0-alpha.0",
-    "@neo-skeuo/react": "0.1.0-alpha.0",
-    "@neo-skeuo/web-css": "0.1.0-alpha.0",
+    "@neo-skeuo/antd": "1.0.0",
+    "@neo-skeuo/react": "1.0.0",
+    "@neo-skeuo/web-css": "1.0.0",
     "antd": "^5.29.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

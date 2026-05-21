@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/tokens",
-  "version": "0.1.0-alpha.0",
+  "version": "1.0.0",
   "description": "Neo-skeuo design tokens (light/dark) and theme serializers",
   "license": "MIT",
   "type": "module",
@@ -15,7 +15,10 @@
     },
     "./tokens.json": "./tokens.json"
   },
-  "files": ["dist", "tokens.json"],
+  "files": [
+    "dist",
+    "tokens.json"
+  ],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",

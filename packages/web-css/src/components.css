@@ -116,6 +116,12 @@
   background: var(--neo-hatch), var(--neo-inset);
 }
 
+.neo-skeuo .neo-btn--sm {
+  min-height: 32px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
 .neo-skeuo .neo-btn:focus-visible,
 .neo-skeuo .neo-input:focus-visible,
 .neo-skeuo .neo-checkbox:focus-visible,
@@ -512,4 +518,115 @@
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: var(--neo-space-md);
+}
+
+/* Flex */
+.neo-skeuo .neo-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.neo-skeuo .neo-flex--col {
+  flex-direction: column;
+}
+
+/* ColorPicker */
+.neo-skeuo .neo-color-picker {
+  appearance: none;
+  border: var(--neo-border-medium);
+  border-radius: var(--neo-radius-md);
+  background: var(--neo-surface);
+  box-shadow: var(--neo-shadow-raised);
+  cursor: pointer;
+  width: 44px;
+  height: 40px;
+  padding: 4px;
+  filter: url(#neo-sketch);
+  box-sizing: border-box;
+}
+
+.neo-skeuo .neo-color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.neo-skeuo .neo-color-picker::-webkit-color-swatch {
+  border: var(--neo-border-thin);
+  border-radius: calc(var(--neo-radius-md) - 4px);
+}
+
+/* Popover & Popconfirm */
+.neo-skeuo .neo-popover {
+  position: relative;
+  display: inline-block;
+}
+
+.neo-skeuo .neo-popover__trigger {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.neo-skeuo .neo-popover__trigger:focus-visible {
+  outline: 2px solid var(--neo-ink);
+  outline-offset: 2px;
+  border-radius: var(--neo-radius-sm);
+}
+
+.neo-skeuo .neo-popconfirm__actions {
+  display: flex;
+  gap: var(--neo-space-sm);
+  margin-top: var(--neo-space-sm);
+  justify-content: flex-end;
+}
+
+.neo-skeuo .neo-popover__bubble {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--neo-space-sm) var(--neo-space-md);
+  min-width: 150px;
+  z-index: 100;
+  filter: url(#neo-sketch-strong);
+}
+
+.neo-skeuo .neo-popconfirm__title {
+  font-size: 14px;
+  color: var(--neo-ink);
+  margin-bottom: var(--neo-space-sm);
+}
+
+/* Tree */
+.neo-skeuo .neo-tree {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-family: var(--neo-font);
+}
+
+.neo-skeuo .neo-tree__item {
+  padding-left: 16px;
+  position: relative;
+}
+
+.neo-skeuo .neo-tree__title {
+  display: inline-block;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: var(--neo-radius-sm);
+}
+
+.neo-skeuo .neo-tree__title:hover {
+  background: var(--neo-inset);
+}
+
+.neo-skeuo .neo-tree__children {
+  list-style: none;
+  padding-left: 16px;
+  margin: 0;
 }

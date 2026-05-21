@@ -11,6 +11,18 @@ export function useEscapeKey(handler: () => void, enabled = true) {
   }, [handler, enabled]);
 }
 
+export function useClickOutside(ref: RefObject<HTMLElement | null>, handler: () => void, enabled = true) {
+  useEffect(() => {
+    if (!enabled) return;
+    const onDown = (e: MouseEvent) => {
+      const root = ref.current;
+      if (root && !root.contains(e.target as Node)) handler();
+    };
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, [ref, handler, enabled]);
+}
+
 export function useFocusTrap(containerRef: RefObject<HTMLElement | null>, enabled = true) {
   useEffect(() => {
     if (!enabled || !containerRef.current) return;

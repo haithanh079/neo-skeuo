@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/assets",
-  "version": "0.1.0-alpha.0",
+  "version": "1.0.0",
   "description": "Neo-skeuo SVG borders, textures, and RN asset paths",
   "license": "MIT",
   "type": "module",
@@ -15,7 +15,10 @@
     "./paper-texture.svg": "./src/paper-texture.svg",
     "./paper-texture-dark.svg": "./src/paper-texture-dark.svg"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsup && node scripts/build-rn-assets.mjs",
     "typecheck": "tsc --noEmit"

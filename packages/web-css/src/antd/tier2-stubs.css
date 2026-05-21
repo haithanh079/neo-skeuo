@@ -156,3 +156,112 @@
   border-radius: var(--neo-radius-pill) !important;
   box-shadow: var(--neo-shadow-raised) !important;
 }
+
+/* Popover & Tooltip */
+.neo-skeuo .ant-popover-content {
+  filter: url(#neo-sketch-strong) !important;
+}
+
+.neo-skeuo .ant-popover-inner {
+  background: var(--neo-paper) !important;
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-lg) !important;
+  box-shadow: var(--neo-shadow-raised-lg) !important;
+  font-family: var(--neo-font) !important;
+  padding: var(--neo-space-md) !important;
+}
+
+.neo-skeuo .ant-popover-title {
+  color: var(--neo-ink) !important;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.15) !important;
+  padding-bottom: var(--neo-space-xs) !important;
+  margin-bottom: var(--neo-space-sm) !important;
+  font-family: var(--neo-font) !important;
+}
+
+.neo-skeuo .ant-tooltip-inner {
+  background: var(--neo-ink) !important;
+  color: var(--neo-surface) !important;
+  border: var(--neo-border-thin) !important;
+  border-radius: var(--neo-radius-sm) !important;
+  font-family: var(--neo-font) !important;
+  box-shadow: var(--neo-shadow-raised) !important;
+}
+
+/* Tree & TreeSelect */
+.neo-skeuo .ant-tree {
+  font-family: var(--neo-font) !important;
+  background: transparent !important;
+}
+
+.neo-skeuo .ant-tree .ant-tree-node-content-wrapper:hover {
+  background: var(--neo-inset) !important;
+}
+
+.neo-skeuo .ant-tree .ant-tree-node-selected {
+  background: var(--neo-hatch), var(--neo-inset) !important;
+  border: var(--neo-border-thin) !important;
+}
+
+/* ColorPicker */
+.neo-skeuo .ant-color-picker-trigger {
+  border: var(--neo-border-medium) !important;
+  border-radius: var(--neo-radius-md) !important;
+  background: var(--neo-surface) !important;
+  box-shadow: var(--neo-shadow-raised) !important;
+}
+
+.neo-skeuo .ant-color-picker-trigger:active {
+  background: var(--neo-hatch), var(--neo-inset) !important;
+  box-shadow: var(--neo-shadow-inset) !important;
+}
+
+/* Slider */
+.neo-skeuo .ant-slider-rail {
+  background: var(--neo-inset) !important;
+  border: var(--neo-border-thin) !important;
+  height: 8px !important;
+}
+
+.neo-skeuo .ant-slider-track {
+  background: var(--neo-ink) !important;
+  height: 8px !important;
+}
+
+.neo-skeuo .ant-slider-handle::after {
+  box-shadow: none !important;
+  background: var(--neo-surface) !important;
+  border: var(--neo-border-medium) !important;
+  width: 16px !important;
+  height: 16px !important;
+  top: -4px !important;
+}
+
+/* Avatar */
+.neo-skeuo .ant-avatar {
+  border: var(--neo-border-medium) !important;
+  background: var(--neo-surface) !important;
+  color: var(--neo-ink) !important;
+  font-family: var(--neo-font) !important;
+}
+
+/* Badge */
+.neo-skeuo .ant-badge-count {
+  background: var(--neo-ink) !important;
+  color: var(--neo-surface) !important;
+  border: var(--neo-border-thin) !important;
+  font-family: var(--neo-font) !important;
+}
+
+/* Breadcrumb */
+.neo-skeuo .ant-breadcrumb {
+  font-family: var(--neo-font) !important;
+}
+
+.neo-skeuo .ant-breadcrumb a {
+  color: var(--neo-ink) !important;
+}
+
+.neo-skeuo .ant-breadcrumb a:hover {
+  text-decoration: underline !important;
+}

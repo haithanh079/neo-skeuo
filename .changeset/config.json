@@ -5,7 +5,7 @@
   "fixed": [["@neo-skeuo/*"]],
   "linked": [],
   "access": "public",
-  "baseBranch": "main",
+  "baseBranch": "master",
   "updateInternalDependencies": "patch",
   "ignore": ["storybook-web", "example-expo", "example-sveltekit"]
 }

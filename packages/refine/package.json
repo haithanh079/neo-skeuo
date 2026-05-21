@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/refine",
-  "version": "0.1.0-alpha.0",
+  "version": "1.0.0",
   "description": "Neo-skeuo Refine + Ant Design root shell",
   "license": "MIT",
   "type": "module",
@@ -14,7 +14,9 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit"
@@ -26,7 +28,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@neo-skeuo/antd": "0.1.0-alpha.0"
+    "@neo-skeuo/antd": "1.0.0"
   },
   "devDependencies": {
     "@refinedev/core": "^4.57.0",

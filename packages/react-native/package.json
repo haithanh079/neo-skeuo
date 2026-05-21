@@ -1,6 +1,6 @@
 {
   "name": "@neo-skeuo/react-native",
-  "version": "0.1.0-alpha.0",
+  "version": "1.0.0",
   "description": "Neo-skeuo React Native primitives",
   "license": "MIT",
   "type": "module",
@@ -14,7 +14,9 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit"
@@ -25,7 +27,7 @@
     "react-native-svg": ">=15"
   },
   "dependencies": {
-    "@neo-skeuo/tokens": "0.1.0-alpha.0"
+    "@neo-skeuo/tokens": "1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.18",
