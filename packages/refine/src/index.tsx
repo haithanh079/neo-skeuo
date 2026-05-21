@@ -1,7 +1,7 @@
 import { App as AntdApp } from "antd";
 import type { RefineProps } from "@refinedev/core";
 import { Refine } from "@refinedev/core";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { NeoSkeuoAntdProvider, type NeoSkeuoAntdProviderProps } from "@neo-skeuo/antd";
 
 export type NeoRefineRootProps = NeoSkeuoAntdProviderProps;
@@ -36,6 +36,13 @@ export type NeoAdminLayoutProps = {
   children?: ReactNode;
 };
 
+const neoAdminContentAreaStyle: CSSProperties = {
+  flex: 1,
+  minWidth: 0,
+  maxWidth: "100%",
+  overflowX: "auto",
+};
+
 /** Optional layout slots — use with your own Ant Layout + Menu. */
 export function NeoAdminLayout({ logo, headerTitle, headerExtra, sider, children }: NeoAdminLayoutProps) {
   return (
@@ -46,7 +53,13 @@ export function NeoAdminLayout({ logo, headerTitle, headerExtra, sider, children
           {sider}
         </aside>
       ) : null}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+      <div
+        style={{
+          ...neoAdminContentAreaStyle,
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <header
           className="admin-header neo-admin-header"
           style={{ display: "flex", justifyContent: "space-between", padding: "0 24px", alignItems: "center" }}
@@ -54,7 +67,14 @@ export function NeoAdminLayout({ logo, headerTitle, headerExtra, sider, children
           <span>{headerTitle}</span>
           {headerExtra}
         </header>
-        <main className="admin-content neo-admin-content" style={{ flex: 1, margin: 24, padding: 24 }}>
+        <main
+          className="admin-content neo-admin-content"
+          style={{
+            ...neoAdminContentAreaStyle,
+            margin: 24,
+            padding: 24,
+          }}
+        >
           {children}
         </main>
       </div>
